@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.Session;
 
-import br.gov.framework.demoiselle.core.context.ContextLocator;
 import br.gov.framework.demoiselle.core.layer.IViewController;
 import br.gov.framework.demoiselle.core.layer.integration.Injection;
 import br.gov.serpro.exemplo.webapp.bean.Contato;
