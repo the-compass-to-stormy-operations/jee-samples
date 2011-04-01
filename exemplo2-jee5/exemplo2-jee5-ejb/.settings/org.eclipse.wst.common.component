@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="exemplo2-jee5-ejb-1.0.0-SNAPSHOT">
+        <wb-resource deploy-path="/" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/java"/>
+        <property name="java-output-path" value="/exemplo2-jee5-ejb/target/classes"/>
+    </wb-module>
+</project-modules>

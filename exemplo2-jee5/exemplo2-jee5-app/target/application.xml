@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application PUBLIC
+	"-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN"
+	"http://java.sun.com/dtd/application_1_3.dtd">
+<application>
+  <display-name>exemplo2-jee5-app</display-name>
+  <description>Módulo Application</description>
+  <module>
+    <java>exemplo2-jee5-common-1.0.0-SNAPSHOT.jar</java>
+  </module>
+  <module>
+    <ejb>exemplo2-jee5-ejb-1.0.0-SNAPSHOT.jar</ejb>
+  </module>
+</application>

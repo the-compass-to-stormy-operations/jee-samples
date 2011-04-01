@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">	
+	<!-- Facelets Configuration-->
+	<application>
+		<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+	</application>
+		
+	<!-- 
+	<managed-bean>
+		<managed-bean-name></managed-bean-name>
+		<managed-bean-class></managed-bean-class>
+		<managed-bean-scope></managed-bean-scope>
+	</managed-bean>
+	...
+	 -->
+
+	<!-- 
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome></from-outcome>
+			<to-view-id></to-view-id>
+		</navigation-case>
+		...
+	</navigation-rule>
+	-->
+
+</faces-config>
