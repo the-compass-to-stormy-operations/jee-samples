@@ -1,1 +1,0 @@
-Style files with public access

@@ -1,1 +1,0 @@
-Jsp files with restricted access
