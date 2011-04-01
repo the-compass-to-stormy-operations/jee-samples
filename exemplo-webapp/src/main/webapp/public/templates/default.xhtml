@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax">
+<head>
+	<title><ui:insert name="title">exemplo-webapp</ui:insert></title>
+<style>
+<!--
+body{   
+    background-color:   #ffffff;
+    margin:             0px;    
+}
+form {
+    margin: 0px;
+}
+fieldset {
+    border:         none;   
+    margin:         5px;    
+}
+table {
+    font-family:    verdana;
+    font-size:      11px;
+    font-weight:    normal; 
+    color:          inherit;
+}
+-->
+</style>	
+</head>
+<body>
+<f:view>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="Logo Demoiselle" style="background-image: url('./../../public/resources/images/logo-b.png')">
+		<tr>
+			<td align="left">
+				<h:graphicImage value="/public/resources/images/logo-l.png" alt=""/>
+			</td>
+			<td align="right">
+				<h:graphicImage value="/public/resources/images/logo-r.png" alt="" />				
+			</td>
+		</tr>	
+	</table>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="Seja bem vindo" >	
+		<tr>
+			<td>
+				<ui:insert name="navegation">
+					<rich:panel styleClass="richPanelStyleClass" bodyClass="richPanelBodyClass" headerClass="richPanelHeaderClass">
+						<h:outputText value="Seja bem vindo" />
+						<h:outputText value="" />
+					</rich:panel>
+				</ui:insert>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<ui:insert name="menu">
+					<h:form>
+					<rich:toolBar height="34" itemSeparator="line" styleClass="richPanelBodyClass" >
+							<rich:toolBarGroup >
+								<h:commandLink value="Menu_01" title="Menu_01" onclick="javascript:alert('Menu_01')"  />
+							</rich:toolBarGroup>
+							<rich:toolBarGroup >
+								<h:commandLink value="Menu_02" title="Menu_02" onclick="javascript:alert('Menu_02')" />
+							</rich:toolBarGroup>
+					</rich:toolBar>
+					</h:form>
+				</ui:insert>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<ui:insert name="message">
+				       <h:messages globalOnly="true" errorClass="errorFatalMessage" fatalClass="errorFatalMessage" infoClass="infoMessage" warnClass="warnMessage" showSummary="true" showDetail="false" />
+				</ui:insert>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<ui:insert name="body">
+				</ui:insert>
+			</td>
+		</tr>
+	</table>
+</f:view>
+</body>
+</html>
