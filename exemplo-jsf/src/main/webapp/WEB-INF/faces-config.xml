@@ -11,8 +11,8 @@
 
 	<managed-bean>
 		<managed-bean-name>teste</managed-bean-name>
-		<managed-bean-class>br.gov.serpro.exemplo.webapp.view.managedbean.TesteMB</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-class>br.gov.serpro.exemplo.jsf.view.managedbean.TesteMB</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	
 	<navigation-rule>
@@ -21,9 +21,6 @@
 			<to-view-id>/private/pages/teste.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
-	</navigation-rule>
-	
-	<navigation-rule>
 		<navigation-case>
 			<from-outcome>default</from-outcome>
 			<to-view-id>/private/pages/default.xhtml</to-view-id>

@@ -4,17 +4,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.gov.serpro</groupId>
-	<artifactId>exemplo-webapp</artifactId>
+	<artifactId>exemplo-jsf</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	
-	<name></name>
+	<name>Exemplo JSF</name>
 	<description></description>
 	<url></url>
 	
 	<properties>
 		<encoding.default>UTF-8</encoding.default>
-	</properties>	
+	 <netbeans.hint.deploy.server>JBoss4</netbeans.hint.deploy.server>
+	</properties>
 	
 	<repositories>
 <!--		<repository>-->

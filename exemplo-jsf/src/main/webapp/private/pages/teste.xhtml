@@ -4,20 +4,21 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:rich="http://richfaces.org/rich"
-	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax">	
+        xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+        xmlns:a4j="http://richfaces.org/a4j">
 <ui:composition template="/public/templates/default.xhtml">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
 	<ui:define name="body">
 		<h3>teste</h3>  
 		
 		<h:form>
-		
 			<h:inputText value="#{teste.field}" />
 			<h:commandButton value="Executar" action="#{teste.executar}"/>
 			<h:commandButton value="Ir Para Default" action="default"/>
 			<a4j:commandButton value="Executar" action="#{teste.executarAjax}"/>
-			
 		</h:form>
+
+
 		
 	</ui:define>	
 </ui:composition>
