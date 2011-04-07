@@ -11,7 +11,7 @@
 
 	<managed-bean>
 		<managed-bean-name>teste</managed-bean-name>
-		<managed-bean-class>br.gov.serpro.exemplo.jsf.view.managedbean.TesteMB</managed-bean-class>
+		<managed-bean-class>tirando.onda.jee.exemplo.jsf.view.managedbean.TesteMB</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	
