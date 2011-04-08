@@ -15,16 +15,10 @@
 		<param-name>org.richfaces.SKIN</param-name>
 		<param-value>blueSky</param-value>
 	</context-param>
-	<!-- <context-param>-->
-	<!-- <description></description>-->
-	<!-- <param-name>com.sun.faces.numberOfViewsInSession</param-name>-->
-	<!-- <param-value>1</param-value>-->
-	<!-- </context-param>-->
-	<!--<context-param>-->
-	<!-- <description></description>-->
-	<!-- <param-name>com.sun.faces.numberOfLogicalViews</param-name>-->
-	<!-- <param-value>1</param-value>-->
-	<!--</context-param>-->
+	<context-param>
+		<param-name>facelets.DEVELOPMENT</param-name>
+		<param-value>true</param-value>
+	</context-param>
 	<filter>
 		<display-name>RichFaces Filter</display-name>
 		<filter-name>richfaces</filter-name>
@@ -52,16 +46,21 @@
 	</welcome-file-list>
 	<error-page>
 		<error-code>404</error-code>
-		<location>/public/pages/error/404.jsp</location>
+		<location>/public/pages/error/404.xhtml</location>
 	</error-page>
 	<error-page>
 		<error-code>500</error-code>
-		<location>/public/pages/error/500.jsp</location>
+		<location>/public/pages/error/500.xhtml</location>
 	</error-page>
 	<error-page>
 		<exception-type>java.lang.Throwable</exception-type>
-		<location>/public/pages/error/global.jsp</location>
+		<location>/public/pages/error/global.xhtml</location>
 	</error-page>
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.xhtml</url-pattern>
+		</jsp-property-group>
+	</jsp-config>
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>private</web-resource-name>
@@ -75,8 +74,8 @@
 	<login-config>
 		<auth-method>FORM</auth-method>
 		<form-login-config>
-			<form-login-page>/public/pages/security/login.jsp</form-login-page>
-			<form-error-page>/public/pages/error/acess.jsp</form-error-page>
+			<form-login-page>/public/pages/security/login.xhtml</form-login-page>
+			<form-error-page>/public/pages/error/acess.xhtml</form-error-page>
 		</form-login-config>
 	</login-config>
 </web-app>

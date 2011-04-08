@@ -7,82 +7,14 @@
 	xmlns:a4j="http://richfaces.org/a4j">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title><ui:insert name="title">exemplo-jsf</ui:insert></title>
-<style>
-<!--
-body{   
-    background-color:   #ffffff;
-    margin:             0px;    
-}
-form {
-    margin: 0px;
-}
-fieldset {
-    border:         none;   
-    margin:         5px;    
-}
-table {
-    font-family:    verdana;
-    font-size:      11px;
-    font-weight:    normal; 
-    color:          inherit;
-}
--->
-</style>	
+	<link href="#{facesContext.externalContext.requestContextPath}/public/resources/styles/default.css" rel="stylesheet" type="text/css" />
+	<title><ui:insert name="title">Tirando Onda JEE - Exemplo JSF</ui:insert></title>
 </head>
 <body>
 <f:view>
-	<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="Logo Demoiselle" style="background-image: url('./../../public/resources/images/logo-b.png')">
-		<tr>
-			<td align="left">
-				<h:graphicImage value="/public/resources/images/logo-l.png" alt=""/>
-			</td>
-			<td align="right">
-				<h:graphicImage value="/public/resources/images/logo-r.png" alt="" />				
-			</td>
-		</tr>	
-	</table>
-	<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="Seja bem vindo" >	
-		<tr>
-			<td>
-				<ui:insert name="navegation">
-					<rich:panel styleClass="richPanelStyleClass" bodyClass="richPanelBodyClass" headerClass="richPanelHeaderClass">
-						<h:outputText value="Seja bem vindo" />
-						<h:outputText value="" />
-					</rich:panel>
-				</ui:insert>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<ui:insert name="menu">
-					<h:form>
-					<rich:toolBar height="34" itemSeparator="line" styleClass="richPanelBodyClass" >
-							<rich:toolBarGroup >
-								<h:commandLink value="Default" title="Default" action="default" />
-							</rich:toolBarGroup>
-							<rich:toolBarGroup >
-								<h:commandLink value="Teste" title="Teste" action="teste" />
-							</rich:toolBarGroup>
-					</rich:toolBar>
-					</h:form>
-				</ui:insert>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<ui:insert name="message">
-				       <h:messages globalOnly="true" errorClass="errorFatalMessage" fatalClass="errorFatalMessage" infoClass="infoMessage" warnClass="warnMessage" showSummary="true" showDetail="false" />
-				</ui:insert>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<ui:insert name="body">
-				</ui:insert>
-			</td>
-		</tr>
-	</table>
+	<ui:include src="/public/templates/menu.xhtml" /> 
+	<ui:insert name="body">
+	</ui:insert>
 </f:view>
 </body>
 </html>

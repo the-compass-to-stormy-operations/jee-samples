@@ -1,5 +1,8 @@
 package tirando.onda.jee.exemplo.jsf.view.managedbean;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 public class TesteMB {
 	
 	private String field;
@@ -20,7 +23,8 @@ public class TesteMB {
 	}
 	
 	public String executarAjax() {
-		System.out.println("Executou Ajax");
+		System.out.println("Executou Ajax...");
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Mensagem 1", "Detalhe da Mensagem 1"));
 		return "";
 	}
 
