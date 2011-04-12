@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	<display-name>exemplo-jsf</display-name>
@@ -13,7 +13,7 @@
 	</context-param>
 	<context-param>
 		<param-name>org.richfaces.SKIN</param-name>
-		<param-value>blueSky</param-value>
+		<param-value>wine</param-value>
 	</context-param>
 	<context-param>
 		<param-name>facelets.DEVELOPMENT</param-name>
@@ -46,21 +46,16 @@
 	</welcome-file-list>
 	<error-page>
 		<error-code>404</error-code>
-		<location>/public/pages/error/404.xhtml</location>
+		<location>/public/pages/error/404.jsp</location>
 	</error-page>
 	<error-page>
 		<error-code>500</error-code>
-		<location>/public/pages/error/500.xhtml</location>
+		<location>/public/pages/error/500.jsp</location>
 	</error-page>
 	<error-page>
 		<exception-type>java.lang.Throwable</exception-type>
-		<location>/public/pages/error/global.xhtml</location>
+		<location>/public/pages/error/global.jsp</location>
 	</error-page>
-	<jsp-config>
-		<jsp-property-group>
-			<url-pattern>*.xhtml</url-pattern>
-		</jsp-property-group>
-	</jsp-config>
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>private</web-resource-name>
@@ -74,8 +69,8 @@
 	<login-config>
 		<auth-method>FORM</auth-method>
 		<form-login-config>
-			<form-login-page>/public/pages/security/login.xhtml</form-login-page>
-			<form-error-page>/public/pages/error/acess.xhtml</form-error-page>
+			<form-login-page>/public/pages/security/login.jsp</form-login-page>
+			<form-error-page>/public/pages/error/acess.jsp</form-error-page>
 		</form-login-config>
 	</login-config>
 </web-app>
