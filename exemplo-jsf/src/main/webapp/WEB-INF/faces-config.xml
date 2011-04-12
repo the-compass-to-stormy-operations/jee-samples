@@ -10,20 +10,20 @@
 	</application>
 
 	<managed-bean>
-		<managed-bean-name>teste</managed-bean-name>
-		<managed-bean-class>tirando.onda.jee.exemplo.jsf.view.managedbean.TesteMB</managed-bean-class>
+		<managed-bean-name>sample</managed-bean-name>
+		<managed-bean-class>tirando.onda.jee.exemplo.jsf.view.SampleController</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	
 	<navigation-rule>
 		<navigation-case>
-			<from-outcome>teste</from-outcome>
-			<to-view-id>/private/pages/teste.xhtml</to-view-id>
+			<from-outcome>default</from-outcome>
+			<to-view-id>/private/pages/default.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>default</from-outcome>
-			<to-view-id>/private/pages/default.xhtml</to-view-id>
+			<from-outcome>sample</from-outcome>
+			<to-view-id>/private/pages/sample.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
 	</navigation-rule>

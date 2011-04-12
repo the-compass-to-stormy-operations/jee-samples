@@ -13,10 +13,18 @@
 	</context-param>
 	<context-param>
 		<param-name>org.richfaces.SKIN</param-name>
-		<param-value>wine</param-value>
+		<param-value>blueSky</param-value>
 	</context-param>
 	<context-param>
 		<param-name>facelets.DEVELOPMENT</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>facelets.RECREATE_VALUE_EXPRESSION_ON_BUILD_BEFORE_RESTORE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>facelets.BUILD_BEFORE_RESTORE</param-name>
 		<param-value>true</param-value>
 	</context-param>
 	<filter>
