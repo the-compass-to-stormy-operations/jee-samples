@@ -31,15 +31,32 @@
 			<a4j:commandButton value="Execute" action="#{sample.execute}" reRender="messages"/>
 		</h:form>
 		
+		<rich:layout id="layoutPanel">
+			<rich:layoutPanel position="top" width="30px">
+				<h:outputText value="top"/>
+			</rich:layoutPanel>
+			<rich:layoutPanel position="center" width="30px">
+				<h:outputText value="center"/>
+			</rich:layoutPanel>
+			<rich:layoutPanel position="bottom" width="30px">
+				<h:outputText value="bottom"/>
+			</rich:layoutPanel>
+		</rich:layout>
+		
 		<a4j:status  onstart="Richfaces.showModalPanel('modalPanel')" onstop="Richfaces.hideModalPanel('modalPanel')"/>
 
 		<rich:modalPanel id="modalPanel" >
 			<f:facet name="header">
 				<h:outputText value="Title" />
 			</f:facet>
-			<rich:progressBar id="progressBar" mode="client" value="99" >
-				<h:outputText value="wait..."/>
-			</rich:progressBar>
+			<rich:layout>
+				<rich:layoutPanel position="bottom">
+					<h:outputText value="adhaksdh akjsd hakjsd h"/>
+					<rich:progressBar id="progressBar" mode="client" value="99" >
+						<h:outputText value="wait..."/>
+					</rich:progressBar>
+				</rich:layoutPanel>
+			</rich:layout>
 		</rich:modalPanel>
 
 	</ui:define>
