@@ -14,6 +14,11 @@
 			<rich:toolBarGroup>
 				<h:commandLink value="Sample" title="Sample" action="sample" />
 			</rich:toolBarGroup>
+			<rich:toolBarGroup location="right">
+				<h:selectOneMenu value="#{skinManager.skin}" onchange="submit()">
+					<f:selectItems value="#{skinManager.selectSkinItens}"/>
+				</h:selectOneMenu>
+			</rich:toolBarGroup>
 		</rich:toolBar>
 	</h:form>
 </ui:composition>

@@ -6,59 +6,43 @@
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:a4j="http://richfaces.org/a4j">
 <ui:composition template="/public/templates/default.xhtml">
+
+	<a4j:loadScript src="" />
+
 	<ui:define name="body">
 
-		<h:form>
-			<h:outputLabel for="textField" value="Text Field:"/>
-			<h:inputText id="textField" value="#{sample.model.textField}" /><br />
-			
-			<h:outputLabel for="dateField" value="Date Field:"/>
-			<rich:calendar id="dateField" value="#{sample.model.dateField}" datePattern="dd/MM/yyyy">
-				<f:convertDateTime pattern="dd/MM/yyyy" />
-			</rich:calendar><br />
-
-			<h:outputLabel for="choiceField" value="Choice Field:"/>
-			<h:selectOneMenu id="choiceField" value="#{sample.model.choiceField}">
-				<f:selectItems value="#{sample.model.choiceFieldValues}" />
-			</h:selectOneMenu><br />
-
-			<h:outputLabel for="decimalField" value="Decimal Field:"/>
-			<h:inputText id="decimalField" value="#{sample.model.decimalField}">
-<!--				<f:converter converterId="javax.faces.BigDecimal" />-->
-				<f:convertNumber type="currency" />
-			</h:inputText><br />
-			
-			<a4j:commandButton value="Execute" action="#{sample.execute}" reRender="messages"/>
+		<h:form id="frmSample">
+			<rich:panel>
+				<h:outputLabel for="textField" value="Text Field:"/>
+				<h:inputText id="textField" value="#{sample.model.textField}" /><br />
+				
+				<h:outputLabel for="dateField" value="Date Field:"/>
+				<rich:calendar id="dateField" value="#{sample.model.dateField}" datePattern="dd/MM/yyyy" enableManualInput="true" firstWeekDay="0">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</rich:calendar><br />
+	
+				<h:outputLabel for="choiceField" value="Choice Field:"/>
+				<h:selectOneMenu id="choiceField" value="#{sample.model.choiceField}">
+					<f:selectItems value="#{sample.model.choiceFieldValues}" />
+				</h:selectOneMenu><br />
+	
+				<h:outputLabel for="decimalField" value="Decimal Field:"/>
+				<h:inputText id="decimalField" value="#{sample.model.decimalField}">
+					<f:converter converterId="javax.faces.BigDecimal" />
+				</h:inputText><br />
+				
+				<a4j:commandButton id="btExecute" value="Execute" action="#{sample.execute}" reRender="messages"/>
+			</rich:panel>
 		</h:form>
-		
-		<rich:layout id="layoutPanel">
-			<rich:layoutPanel position="top" width="30px">
-				<h:outputText value="top"/>
-			</rich:layoutPanel>
-			<rich:layoutPanel position="center" width="30px">
-				<h:outputText value="center"/>
-			</rich:layoutPanel>
-			<rich:layoutPanel position="bottom" width="30px">
-				<h:outputText value="bottom"/>
-			</rich:layoutPanel>
-		</rich:layout>
-		
-		<a4j:status  onstart="Richfaces.showModalPanel('modalPanel')" onstop="Richfaces.hideModalPanel('modalPanel')"/>
 
-		<rich:modalPanel id="modalPanel" >
+		<a4j:status  onstart="Richfaces.showModalPanel('pnModal')" onstop="Richfaces.hideModalPanel('pnModal')"/>
+
+		<rich:modalPanel id="pnModal" autosized="true">
 			<f:facet name="header">
-				<h:outputText value="Title" />
+				<h:outputText value="Wait..." />
 			</f:facet>
-			<rich:layout>
-				<rich:layoutPanel position="bottom">
-					<h:outputText value="adhaksdh akjsd hakjsd h"/>
-					<rich:progressBar id="progressBar" mode="client" value="99" >
-						<h:outputText value="wait..."/>
-					</rich:progressBar>
-				</rich:layoutPanel>
-			</rich:layout>
+			<rich:progressBar id="progressBar" mode="client" value="99" />
 		</rich:modalPanel>
-
 	</ui:define>
 </ui:composition>
 
