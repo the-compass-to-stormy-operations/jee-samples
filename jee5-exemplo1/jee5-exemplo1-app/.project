@@ -3,6 +3,9 @@
 	<name>jee5-exemplo1-app</name>
 	<comment></comment>
 	<projects>
+		<project>jee5-exemplo1-common</project>
+		<project>jee5-exemplo1-ejb</project>
+		<project>jee5-exemplo1-web</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
