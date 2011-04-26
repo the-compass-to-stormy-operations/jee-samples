@@ -1,23 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+	
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>tirando.onda.jee</groupId>
-	<artifactId>exemplo-jsf</artifactId>
+	<artifactId>jee5-exemplo1</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>war</packaging>
-
-	<name>Exemplo JSF</name>
-	<description></description>
-	<url></url>
-
+	<packaging>pom</packaging>
+	
+	<name>JEE 5 Exemplo 1</name>
+	<description>JEE 5 Exemplo 1</description>
+	
 	<properties>
 		<encoding.default>UTF-8</encoding.default>
 	</properties>
-
+	
+	<modules>
+		<module>jee5-exemplo1-common</module>
+		<module>jee5-exemplo1-ejb</module>
+		<module>jee5-exemplo1-web</module>
+		<module>jee5-exemplo1-app</module>
+	</modules>
+	
 	<repositories>
 		<repository>
 			<id>maven2-repository.java.net</id>
@@ -33,7 +36,6 @@
 	</repositories>
 
 	<build>
-		<finalName>exemplo-jsf</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
@@ -93,6 +95,8 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.7</version>
 				<configuration>
+					<detectJavaApiLink>false</detectJavaApiLink>
+					<failOnError>false</failOnError>
 					<links>
 						<link>http://download.oracle.com/javase/1.5.0/docs/api/</link>
 						<link>http://download.oracle.com/javaee/5/api/</link>
@@ -118,7 +122,7 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.14</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency>	
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -126,66 +130,11 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-	  		<groupId>javax.servlet</groupId>
-  			<artifactId>servlet-api</artifactId>
-  			<version>2.5</version>
-  			<scope>provided</scope>
-  		</dependency>
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.faces</groupId>
-			<artifactId>jsf-impl</artifactId>
-			<version>1.2_12</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.faces</groupId>
-			<artifactId>jsf-api</artifactId>
-			<version>1.2_12</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
 			<groupId>javaee</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>5</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.sun.facelets</groupId>
-			<artifactId>jsf-facelets</artifactId>
-			<version>1.1.15</version>
-		</dependency>
-		<dependency>
-			<groupId>org.richfaces.framework</groupId>
-			<artifactId>richfaces-api</artifactId>
-			<version>3.3.3.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.richfaces.framework</groupId>
-			<artifactId>richfaces-impl</artifactId>
-			<version>3.3.3.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.richfaces.ui</groupId>
-			<artifactId>richfaces-ui</artifactId>
-			<version>3.3.3.Final</version>
-		</dependency>
-		<dependency>
-      <groupId>tirando.onda.jee</groupId>
-      <artifactId>exemplo-tag</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
-    </dependency>
-	</dependencies>
-
+	</dependencies>	
+	
 </project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="jee5-exemplo1-app">
+        <wb-resource deploy-path="/" source-path="/src/main/application"/>
+        <dependent-module archiveName="/jee5-exemplo1-common-1.0.0-SNAPSHOT.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/tirando/onda/jee/jee5-exemplo1-common/1.0.0-SNAPSHOT/jee5-exemplo1-common-1.0.0-SNAPSHOT.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jee5-exemplo1-web-1.0.0-SNAPSHOT.war" deploy-path="/" handle="module:/classpath/var/M2_REPO/tirando/onda/jee/jee5-exemplo1-web/1.0.0-SNAPSHOT/jee5-exemplo1-web-1.0.0-SNAPSHOT.war">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jee5-exemplo1-ejb-1.0.0-SNAPSHOT.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/tirando/onda/jee/jee5-exemplo1-ejb/1.0.0-SNAPSHOT/jee5-exemplo1-ejb-1.0.0-SNAPSHOT.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
