@@ -3,9 +3,6 @@
 	<name>jee5-exemplo1-app</name>
 	<comment></comment>
 	<projects>
-		<project>jee5-exemplo1-common</project>
-		<project>jee5-exemplo1-ejb</project>
-		<project>jee5-exemplo1-web</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -19,11 +16,6 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.eclipse.wst.validation.validationbuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
 			<name>org.maven.ide.eclipse.maven2Builder</name>
 			<arguments>
 			</arguments>
@@ -33,6 +25,5 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.maven.ide.eclipse.maven2Nature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
-		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
 	</natures>
 </projectDescription>
