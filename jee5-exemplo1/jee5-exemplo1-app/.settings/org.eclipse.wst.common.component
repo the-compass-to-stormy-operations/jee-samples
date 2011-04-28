@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="jee5-exemplo1-app">
+        <wb-resource deploy-path="/" source-path="/src/main/application"/>
+        <dependent-module archiveName="jee5-exemplo1-common.jar" deploy-path="/" handle="module:/resource/jee5-exemplo1-common/jee5-exemplo1-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jee5-exemplo1-ejb.jar" deploy-path="/" handle="module:/resource/jee5-exemplo1-ejb/jee5-exemplo1-ejb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jee5-exemplo1-web.war" deploy-path="/" handle="module:/resource/jee5-exemplo1-web/jee5-exemplo1-web">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

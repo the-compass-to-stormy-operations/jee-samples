@@ -26,7 +26,7 @@ public class SkinManagerBean {
 		this.skinItens = skinItens;
 	}
 	
-	public Collection<SelectItem> getSelectSkinItens() {
+	public Collection<SelectItem> getSkinSelectItens() {
 		ArrayList<SelectItem> result = new ArrayList<SelectItem>();
 		for (int i = 0; i < skinItens.length; i++) {
 			result.add(new SelectItem(skinItens[i]));

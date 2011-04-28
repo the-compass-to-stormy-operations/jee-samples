@@ -6,13 +6,18 @@
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:a4j="http://richfaces.org/a4j">
 <ui:composition>
-	<h:form>
+	<h:form id="frmMenu">
 		<rich:toolBar height="34" itemSeparator="line">
 			<rich:toolBarGroup>
 				<h:commandLink value="Default" title="Default" action="default" />
 			</rich:toolBarGroup>
 			<rich:toolBarGroup>
 				<h:commandLink value="Sample" title="Sample" action="sample" />
+			</rich:toolBarGroup>
+			<rich:toolBarGroup location="right">
+				<h:selectOneMenu id="skin" value="#{skinManager.skin}" onchange="submit();">
+					<f:selectItems value="#{skinManager.skinSelectItens}" />
+				</h:selectOneMenu>
 			</rich:toolBarGroup>
 		</rich:toolBar>
 	</h:form>
