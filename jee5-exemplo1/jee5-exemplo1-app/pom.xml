@@ -42,9 +42,6 @@
 							<contextRoot>/jee5-exemplo1-web</contextRoot>
 						</webModule>
 					</modules>
-					<jboss>
-						
-					</jboss>
 				</configuration>
 			</plugin>			
 		</plugins>

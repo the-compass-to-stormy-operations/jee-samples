@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.ejb.EJB;
 import javax.faces.model.SelectItem;
+
+import tirando.onda.jee.jee5.exemplo1.common.Sample;
 
 public class SampleBean {
 	
@@ -15,6 +18,9 @@ public class SampleBean {
 	private BigDecimal decimalField;
 	
 	private Collection<SelectItem> choiceFieldValues = new ArrayList<SelectItem>();
+	
+	@EJB
+	private Sample sample;
 	
 	public SampleBean() {
 		choiceFieldValues.add(new SelectItem(-1,""));
@@ -75,6 +81,7 @@ public class SampleBean {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		sample.sampleMethod();
 		return "sample";
 	}
 
