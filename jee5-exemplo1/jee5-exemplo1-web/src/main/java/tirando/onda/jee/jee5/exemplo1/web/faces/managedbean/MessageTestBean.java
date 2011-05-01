@@ -36,4 +36,12 @@ public class MessageTestBean {
 		return "message";
 	}
 	
+	public String execute2() {
+		Message msg = new GenericMessage("GENERIC-MESSAGE", label, new Locale("pt", "br"), "info-message", Severity.INFO);
+		
+		context.addMessage(msg);
+		System.out.println(context.getMessages().size());
+		return "message";
+	}
+	
 }
