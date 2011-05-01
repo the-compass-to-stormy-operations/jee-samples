@@ -2,8 +2,8 @@ package tirando.onda.jee.jee5.exemplo1.common.message;
 
 import java.util.Locale;
 
-import tirando.onda.jee.jee5.library.message.Message;
-import tirando.onda.jee.jee5.library.message.Severity;
+import tirando.onda.jee.jee5.utility.message.Message;
+import tirando.onda.jee.jee5.utility.message.Severity;
 
 public enum InfoMessage implements Message {
 

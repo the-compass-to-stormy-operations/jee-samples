@@ -5,9 +5,9 @@ import java.util.Locale;
 import javax.ejb.EJB;
 
 import tirando.onda.jee.jee5.exemplo1.common.MessageTest;
-import tirando.onda.jee.jee5.library.message.Message;
-import tirando.onda.jee.jee5.library.message.MessageContext;
-import tirando.onda.jee.jee5.library.message.Severity;
+import tirando.onda.jee.jee5.utility.message.Message;
+import tirando.onda.jee.jee5.utility.message.MessageContext;
+import tirando.onda.jee.jee5.utility.message.Severity;
 
 public class MessageTestBean {
 
@@ -17,7 +17,7 @@ public class MessageTestBean {
 	@EJB
 	private MessageContext context;
 	
-	private String label = null;
+	private String label;
 	
 	public String getLabel() {
 		return label;
@@ -35,4 +35,5 @@ public class MessageTestBean {
 		context.clear();
 		return "message";
 	}
+	
 }

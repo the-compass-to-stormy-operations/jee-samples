@@ -38,9 +38,9 @@
 		</dependency>
 		<dependency>
 			<groupId>tirando.onda.jee</groupId>
-			<artifactId>jee5-library</artifactId>
+			<artifactId>jee5-utility</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
-		</dependency>	
+		</dependency>
 	</dependencies>
 	
 </project>

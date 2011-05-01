@@ -5,8 +5,8 @@ import javax.ejb.Local;
 import javax.ejb.Stateless;
 
 import tirando.onda.jee.jee5.exemplo1.common.PersistenceTest;
-import tirando.onda.jee.jee5.library.message.Message;
-import tirando.onda.jee.jee5.library.message.MessageContext;
+import tirando.onda.jee.jee5.utility.message.Message;
+import tirando.onda.jee.jee5.utility.message.MessageContext;
 
 
 @Stateless

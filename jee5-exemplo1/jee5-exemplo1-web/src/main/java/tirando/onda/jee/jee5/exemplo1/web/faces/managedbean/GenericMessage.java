@@ -2,8 +2,8 @@ package tirando.onda.jee.jee5.exemplo1.web.faces.managedbean;
 
 import java.util.Locale;
 
-import tirando.onda.jee.jee5.library.message.Message;
-import tirando.onda.jee.jee5.library.message.Severity;
+import tirando.onda.jee.jee5.utility.message.Message;
+import tirando.onda.jee.jee5.utility.message.Severity;
 
 public class GenericMessage implements Message {
 	
@@ -14,7 +14,6 @@ public class GenericMessage implements Message {
 	private Severity severity;
 	
 	public GenericMessage(String key, String label, Locale locale, String resourceName, Severity severity) {
-		super();
 		this.key = key;
 		this.label = label;
 		this.locale = locale;
