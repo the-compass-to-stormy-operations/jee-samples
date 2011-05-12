@@ -1,4 +1,4 @@
-package tirando.onda.jee.jee5.exemplo1.message;
+package tirando.onda.jee.jee5.utility.message;
 
 import java.util.ArrayList;
 

@@ -17,4 +17,11 @@
 <!--		</session>-->
 <!--	</enterprise-beans>-->
 
+	<assembly-descriptor>
+		<interceptor-binding>
+			<ejb-name>*</ejb-name>
+			<interceptor-class>tirando.onda.jee.jee5.exemplo1.GenericInterceptor</interceptor-class>
+		</interceptor-binding>
+	</assembly-descriptor>	
+
 </ejb-jar>

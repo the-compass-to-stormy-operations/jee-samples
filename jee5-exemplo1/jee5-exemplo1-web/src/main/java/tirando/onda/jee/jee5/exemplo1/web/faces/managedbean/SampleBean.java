@@ -8,8 +8,6 @@ import java.util.Date;
 import javax.ejb.EJB;
 import javax.faces.model.SelectItem;
 
-import tirando.onda.jee.jee5.exemplo1.common.Sample;
-
 public class SampleBean {
 	
 	private String textField;

@@ -1,19 +1,20 @@
-package tirando.onda.jee.jee5.exemplo1.message;
+package tirando.onda.jee.jee5.utility.message;
 
-import java.text.MessageFormat;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 import tirando.onda.jee.jee5.utility.message.Message;
 import tirando.onda.jee.jee5.utility.message.Severity;
 
-public class MessageLabelArgumentDecorator implements Message {
+public class MessageLabelInternationalizeDecorator implements Message {
 
 	private Message message;
-	private Object[] args;
+	private Locale newLocale;
 
-	public MessageLabelArgumentDecorator(Message message, Object... args) {
+	public MessageLabelInternationalizeDecorator(Message message,
+			Locale newLocale) {
 		this.message = message;
-		this.args = args;
+		this.newLocale = newLocale;
 	}
 
 	public String getKey() {
@@ -23,10 +24,12 @@ public class MessageLabelArgumentDecorator implements Message {
 	public String getLabel() {
 		String label = message.getLabel();
 
-		if (args != null) {
-			MessageFormat formatter = new MessageFormat("");
-			formatter.applyPattern(message.getLabel());
-			label = formatter.format(args);
+		if (!newLocale.equals(message.getLocale())) {
+			ResourceBundle bundle = ResourceBundle.getBundle(message
+					.getResourceName(), newLocale);
+			if (bundle.getString(message.getKey()) != null) {
+				label = bundle.getString(message.getKey());
+			}
 		}
 
 		return label;

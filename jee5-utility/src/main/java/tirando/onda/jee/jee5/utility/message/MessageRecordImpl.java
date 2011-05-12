@@ -1,4 +1,4 @@
-package tirando.onda.jee.jee5.exemplo1.message;
+package tirando.onda.jee.jee5.utility.message;
 
 import tirando.onda.jee.jee5.utility.message.Message;
 import tirando.onda.jee.jee5.utility.message.MessageRecord;

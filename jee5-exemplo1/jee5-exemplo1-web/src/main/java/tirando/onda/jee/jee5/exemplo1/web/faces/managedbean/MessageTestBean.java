@@ -4,18 +4,13 @@ import java.util.Locale;
 
 import javax.ejb.EJB;
 
-import tirando.onda.jee.jee5.exemplo1.common.MessageTest;
 import tirando.onda.jee.jee5.utility.message.Message;
-import tirando.onda.jee.jee5.utility.message.MessageContext;
 import tirando.onda.jee.jee5.utility.message.Severity;
 
 public class MessageTestBean {
 
 	@EJB
 	private MessageTest messageTest;
-	
-	@EJB
-	private MessageContext context;
 	
 	private String label;
 	
@@ -30,17 +25,7 @@ public class MessageTestBean {
 	public String execute(){
 		Message msg = new GenericMessage("GENERIC-MESSAGE", label, new Locale("pt", "br"), "info-message", Severity.INFO);
 		
-		context.addMessage(msg);
 		messageTest.testMethod(msg);
-		context.clear();
-		return "message";
-	}
-	
-	public String execute2() {
-		Message msg = new GenericMessage("GENERIC-MESSAGE", label, new Locale("pt", "br"), "info-message", Severity.INFO);
-		
-		context.addMessage(msg);
-		System.out.println(context.getMessages().size());
 		return "message";
 	}
 	

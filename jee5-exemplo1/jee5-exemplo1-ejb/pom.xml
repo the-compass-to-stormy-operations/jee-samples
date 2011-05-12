@@ -25,17 +25,13 @@
 				<version>2.3</version>
 				<configuration>
 					<ejbVersion>3.0</ejbVersion>
+					<generateClient>true</generateClient>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 	
 	<dependencies>
-		<dependency>
-			<groupId>tirando.onda.jee</groupId>
-			<artifactId>jee5-exemplo1-common</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
 		<dependency>
 			<groupId>tirando.onda.jee</groupId>
 			<artifactId>jee5-utility</artifactId>
