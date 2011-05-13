@@ -8,6 +8,9 @@ import java.util.Date;
 import javax.ejb.EJB;
 import javax.faces.model.SelectItem;
 
+import tirando.onda.jee.jee5.exemplo1.dto.SampleDTO;
+import tirando.onda.jee.jee5.exemplo1.facade.SampleFacade;
+
 public class SampleBean {
 	
 	private String textField;
@@ -18,7 +21,7 @@ public class SampleBean {
 	private Collection<SelectItem> choiceFieldValues = new ArrayList<SelectItem>();
 	
 	@EJB
-	private Sample sample;
+	private SampleFacade sampleFacade;
 	
 	public SampleBean() {
 		choiceFieldValues.add(new SelectItem(-1,""));
@@ -79,7 +82,7 @@ public class SampleBean {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		sample.sampleMethod();
+		sampleFacade.sampleMethod(new SampleDTO());
 		return "sample";
 	}
 

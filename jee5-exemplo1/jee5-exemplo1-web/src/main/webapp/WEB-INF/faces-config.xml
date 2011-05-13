@@ -13,12 +13,6 @@
 	</application>
 
 	<managed-bean>
-		<managed-bean-name>messageTest</managed-bean-name>
-		<managed-bean-class>tirando.onda.jee.jee5.exemplo1.web.faces.managedbean.MessageTestBean</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
-	</managed-bean>
-	
-	<managed-bean>
 		<managed-bean-name>sample</managed-bean-name>
 		<managed-bean-class>tirando.onda.jee.jee5.exemplo1.web.faces.managedbean.SampleBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
@@ -53,11 +47,6 @@
 		<navigation-case>
 			<from-outcome>sample</from-outcome>
 			<to-view-id>/public/pages/sample.xhtml</to-view-id>
-			<redirect/>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>message</from-outcome>
-			<to-view-id>/public/pages/message.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
 	</navigation-rule>

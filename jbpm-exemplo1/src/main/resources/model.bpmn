@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions id="Definition" id="oryx_affb36f3-99b0-499d-89ad-36022b586c58" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.omg.org/bpmn20" xmlns="http://schema.omg.org/spec/BPMN/2.0" xmlns:bpmndi="http://bpmndi.org">
+    <process id="oryx_1bb86274-9718-4e09-83d7-d5b78b80e7f3">
+        <laneSet id="oryx_5def38b4-d389-4157-a821-6a2cc502d196">
+            <lane name="DefaultLane" id="oryx_8f163e29-95ed-4b94-a341-4cdd0cf7da7a">
+                <flowElementRef>oryx_7D920C89-59D1-4A72-9606-CA6D7B0EF22F</flowElementRef>
+                <flowElementRef>oryx_D9841715-9583-47D8-9985-0A8C1AC1F08F</flowElementRef>
+                <flowElementRef>oryx_6C98DA17-54D8-4B39-A8EE-6E20186619F6</flowElementRef>
+            </lane>
+        </laneSet>
+        <startEvent name="" id="oryx_7D920C89-59D1-4A72-9606-CA6D7B0EF22F"/>
+        <task completionQuantity="1" startQuantity="1" isForCompensation="false" name="Hello" id="oryx_D9841715-9583-47D8-9985-0A8C1AC1F08F"/>
+        <endEvent name="" id="oryx_6C98DA17-54D8-4B39-A8EE-6E20186619F6"/>
+        <sequenceFlow targetRef="oryx_D9841715-9583-47D8-9985-0A8C1AC1F08F" sourceRef="oryx_7D920C89-59D1-4A72-9606-CA6D7B0EF22F" name="" id="oryx_CB0C2EEE-4AE4-4090-BB60-28E195BC0520"/>
+        <sequenceFlow targetRef="oryx_6C98DA17-54D8-4B39-A8EE-6E20186619F6" sourceRef="oryx_D9841715-9583-47D8-9985-0A8C1AC1F08F" name="" id="oryx_86A1797D-9F50-409A-8111-B1859B82A7B5"/>
+    </process>
+    <bpmndi:processDiagram processRef="oryx_1bb86274-9718-4e09-83d7-d5b78b80e7f3" id="oryx_1bb86274-9718-4e09-83d7-d5b78b80e7f3_gui">
+        <bpmndi:laneCompartment isVisible="false" height="0.0" width="0.0" y="0.0" x="0.0" name="DefaultLane" id="oryx_8f163e29-95ed-4b94-a341-4cdd0cf7da7a_gui">
+            <bpmndi:eventShape eventRef="oryx_7D920C89-59D1-4A72-9606-CA6D7B0EF22F" height="30.0" width="30.0" y="94.0" x="139.0" name="" id="oryx_7D920C89-59D1-4A72-9606-CA6D7B0EF22F_gui"/>
+            <bpmndi:activityShape activityRef="oryx_D9841715-9583-47D8-9985-0A8C1AC1F08F" height="80.0" width="100.0" y="69.0" x="315.0" name="Hello" id="oryx_D9841715-9583-47D8-9985-0A8C1AC1F08F_gui"/>
+            <bpmndi:eventShape eventRef="oryx_6C98DA17-54D8-4B39-A8EE-6E20186619F6" height="28.0" width="28.0" y="95.0" x="555.0" name="" id="oryx_6C98DA17-54D8-4B39-A8EE-6E20186619F6_gui"/>
+        </bpmndi:laneCompartment>
+        <bpmndi:sequenceFlowConnector sequenceFlowRef="oryx_CB0C2EEE-4AE4-4090-BB60-28E195BC0520" label="" targetRef="oryx_D9841715-9583-47D8-9985-0A8C1AC1F08F_gui" sourceRef="oryx_7D920C89-59D1-4A72-9606-CA6D7B0EF22F_gui" id="oryx_CB0C2EEE-4AE4-4090-BB60-28E195BC0520_gui"/>
+        <bpmndi:sequenceFlowConnector sequenceFlowRef="oryx_86A1797D-9F50-409A-8111-B1859B82A7B5" label="" targetRef="oryx_6C98DA17-54D8-4B39-A8EE-6E20186619F6_gui" sourceRef="oryx_D9841715-9583-47D8-9985-0A8C1AC1F08F_gui" id="oryx_86A1797D-9F50-409A-8111-B1859B82A7B5_gui"/>
+    </bpmndi:processDiagram>
+</definitions>

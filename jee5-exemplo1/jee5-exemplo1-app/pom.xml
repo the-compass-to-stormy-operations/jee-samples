@@ -28,16 +28,16 @@
 					<version>5</version>
 					<encoding>${encoding.default}</encoding>
 					<modules>
-						<ejbClientModule>
-							<groupId>tirando.onda.jee</groupId>
-							<artifactId>jee5-exemplo1-ejb</artifactId>
-							<bundleDir>/</bundleDir>
-							<includeInApplicationXml>true</includeInApplicationXml>
-						</ejbClientModule>
 						<ejbModule>
 							<groupId>tirando.onda.jee</groupId>
 							<artifactId>jee5-exemplo1-ejb</artifactId>
 						</ejbModule>
+						<jarModule>
+							<groupId>tirando.onda.jee</groupId>
+							<artifactId>jee5-exemplo1-client</artifactId>
+							<bundleDir>/</bundleDir>
+							<includeInApplicationXml>true</includeInApplicationXml>							
+						</jarModule>
 						<webModule>
 							<groupId>tirando.onda.jee</groupId>
 							<artifactId>jee5-exemplo1-web</artifactId>
@@ -66,13 +66,13 @@
 			<groupId>tirando.onda.jee</groupId>
 			<artifactId>jee5-exemplo1-ejb</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
-			<type>ejb-client</type>
+			<type>ejb</type>
 		</dependency>
 		<dependency>
 			<groupId>tirando.onda.jee</groupId>
-			<artifactId>jee5-exemplo1-ejb</artifactId>
+			<artifactId>jee5-exemplo1-client</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
-			<type>ejb</type>
+			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>tirando.onda.jee</groupId>
