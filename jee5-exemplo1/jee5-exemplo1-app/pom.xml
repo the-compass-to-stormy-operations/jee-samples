@@ -32,12 +32,6 @@
 							<groupId>tirando.onda.jee</groupId>
 							<artifactId>jee5-exemplo1-ejb</artifactId>
 						</ejbModule>
-						<jarModule>
-							<groupId>tirando.onda.jee</groupId>
-							<artifactId>jee5-exemplo1-client</artifactId>
-							<bundleDir>/</bundleDir>
-							<includeInApplicationXml>true</includeInApplicationXml>							
-						</jarModule>
 						<webModule>
 							<groupId>tirando.onda.jee</groupId>
 							<artifactId>jee5-exemplo1-web</artifactId>
@@ -45,18 +39,18 @@
 						</webModule>
 					</modules>
 				</configuration>
-<!-- 				<executions> -->
-<!-- 					<execution> -->
-<!--             			<id>m2wtp-generate-application-xml</id> -->
-<!--             			<phase>generate-resources</phase> -->
-<!--             			<goals> -->
-<!--               				<goal>generate-application-xml</goal> -->
-<!--             			</goals> -->
-<!--             			<configuration> -->
-<!--             				<generatedDescriptorLocation>${project.build.directory}/m2e-wtp/ear-resources/META-INF</generatedDescriptorLocation> -->
-<!-- 						</configuration> -->
-<!-- 					</execution> -->
-<!-- 				</executions> -->
+				<executions>
+					<execution>
+            			<id>m2wtp-generate-application-xml</id>
+            			<phase>generate-resources</phase>
+            			<goals>
+              				<goal>generate-application-xml</goal>
+            			</goals>
+            			<configuration>
+            				<generatedDescriptorLocation>${project.build.directory}/m2e-wtp/ear-resources/META-INF</generatedDescriptorLocation>
+						</configuration>
+					</execution>
+				</executions>				
 			</plugin>			
 		</plugins>
 	</build>
@@ -67,12 +61,6 @@
 			<artifactId>jee5-exemplo1-ejb</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 			<type>ejb</type>
-		</dependency>
-		<dependency>
-			<groupId>tirando.onda.jee</groupId>
-			<artifactId>jee5-exemplo1-client</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>tirando.onda.jee</groupId>

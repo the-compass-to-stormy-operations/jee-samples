@@ -16,7 +16,6 @@
 	</properties>
 
 	<modules>
-		<module>jee5-exemplo1-client</module>
 		<module>jee5-exemplo1-ejb</module>
 		<module>jee5-exemplo1-web</module>
 		<module>jee5-exemplo1-app</module>
@@ -32,7 +31,7 @@
 		<repository>
 			<id>repository.jboss.com</id>
 			<name>Jboss Repository for Maven</name>
-			<url>http://repository.jboss.com/maven2/</url>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
 		</repository>
 	</repositories>
 
