@@ -2,8 +2,6 @@ package tirando.onda.jee.jee5.exemplo1.persistence;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceUnit;
 
 @Stateless
 @Local(value=SampleDAO.class)

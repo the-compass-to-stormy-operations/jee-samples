@@ -26,10 +26,12 @@
 				<configuration>
 					<ejbVersion>3.0</ejbVersion>
 					<generateClient>true</generateClient>
-					<clientIncludes>
-						<clientInclude>**/dto/*</clientInclude>
-						<clientInclude>**/facade/*</clientInclude>
-					</clientIncludes>
+					<clientExcludes>
+						<clientExclude>**/business/</clientExclude>
+						<clientExclude>**/persistence/</clientExclude>
+						<clientExclude>**/entity/</clientExclude>
+						<clientExclude>**/*Bean.class</clientExclude>
+					</clientExcludes>
 				</configuration>
 			</plugin>
 		</plugins>
