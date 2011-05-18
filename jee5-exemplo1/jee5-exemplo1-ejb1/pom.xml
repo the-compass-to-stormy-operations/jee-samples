@@ -10,12 +10,12 @@
 	</parent>
 	
 	<groupId>tirando.onda.jee</groupId>
-	<artifactId>jee5-exemplo1-ejb2</artifactId>
+	<artifactId>jee5-exemplo1-ejb1</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>ejb</packaging>
 	
-	<name>JEE 5 Exemplo 1 - EJB2</name>
-	<description>JEE 5 Exemplo 1 - EJB2</description>
+	<name>JEE 5 Exemplo 1 - EJB1</name>
+	<description>JEE 5 Exemplo 1 - EJB1</description>
 
 	<build>
 		<plugins>

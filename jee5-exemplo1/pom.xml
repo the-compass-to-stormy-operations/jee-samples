@@ -16,7 +16,9 @@
 	</properties>
 
 	<modules>
-		<module>jee5-exemplo1-ejb</module>
+		<module>jee5-exemplo1-ejb1-client</module>
+		<module>jee5-exemplo1-ejb2-client</module>
+		<module>jee5-exemplo1-ejb1</module>
 		<module>jee5-exemplo1-ejb2</module>
 		<module>jee5-exemplo1-web</module>
 		<module>jee5-exemplo1-app</module>

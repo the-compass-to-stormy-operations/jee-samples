@@ -3,7 +3,13 @@
     <wb-module deploy-name="jee5-exemplo1-app">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/application"/>
-        <dependent-module archiveName="jee5-exemplo1-ejb-1.0.0-SNAPSHOT.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/tirando/onda/jee/jee5-exemplo1-ejb/1.0.0-SNAPSHOT/jee5-exemplo1-ejb-1.0.0-SNAPSHOT.jar">
+        <dependent-module archiveName="jee5-exemplo1-ejb1-client-1.0.0-SNAPSHOT.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/tirando/onda/jee/jee5-exemplo1-ejb1-client/1.0.0-SNAPSHOT/jee5-exemplo1-ejb1-client-1.0.0-SNAPSHOT.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jee5-exemplo1-ejb2-client-1.0.0-SNAPSHOT.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/tirando/onda/jee/jee5-exemplo1-ejb2-client/1.0.0-SNAPSHOT/jee5-exemplo1-ejb2-client-1.0.0-SNAPSHOT.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jee5-exemplo1-ejb1-1.0.0-SNAPSHOT.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/tirando/onda/jee/jee5-exemplo1-ejb1/1.0.0-SNAPSHOT/jee5-exemplo1-ejb1-1.0.0-SNAPSHOT.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="jee5-exemplo1-ejb2-1.0.0-SNAPSHOT.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/tirando/onda/jee/jee5-exemplo1-ejb2/1.0.0-SNAPSHOT/jee5-exemplo1-ejb2-1.0.0-SNAPSHOT.jar">

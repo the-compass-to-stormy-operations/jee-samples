@@ -8,8 +8,10 @@ import java.util.Date;
 import javax.ejb.EJB;
 import javax.faces.model.SelectItem;
 
-import tirando.onda.jee.jee5.exemplo1.dto.SampleDTO;
-import tirando.onda.jee.jee5.exemplo1.facade.SampleFacade;
+import tirando.onda.jee.jee5.exemplo1.ejb1.dto.SampleDTO1;
+import tirando.onda.jee.jee5.exemplo1.ejb1.facade.SampleFacade1;
+import tirando.onda.jee.jee5.exemplo1.ejb2.dto.AnotherSampleDTO2;
+import tirando.onda.jee.jee5.exemplo1.ejb2.facade.AnotherSampleFacade2;
 
 public class SampleBean {
 	
@@ -21,7 +23,10 @@ public class SampleBean {
 	private Collection<SelectItem> choiceFieldValues = new ArrayList<SelectItem>();
 	
 	@EJB
-	private SampleFacade sampleFacade;
+	private SampleFacade1 sampleFacade1;
+	
+	@EJB
+	private AnotherSampleFacade2 anotherSampleFacade1;
 	
 	public SampleBean() {
 		choiceFieldValues.add(new SelectItem(-1,""));
@@ -75,17 +80,28 @@ public class SampleBean {
 		this.choiceFieldValues = choiceFieldValues;
 	}
 
-	public String execute() {
+	public String execute1() {
 		System.out.println(this.toString());
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		sampleFacade.sampleMethod(new SampleDTO());
+		sampleFacade1.sampleMethod1(new SampleDTO1());
 		return "sample";
 	}
 
+	public String execute2() {
+		System.out.println(this.toString());
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		anotherSampleFacade1.sampleMethod1(new AnotherSampleDTO2());
+		return "sample";
+	}
+	
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("TextField:");
