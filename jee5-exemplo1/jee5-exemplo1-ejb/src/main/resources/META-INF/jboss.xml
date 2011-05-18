@@ -2,5 +2,12 @@
 <!DOCTYPE jboss PUBLIC "-//JBoss//DTD JBOSS 5.0//EN" "http://www.jboss.org/j2ee/dtd/jboss_5_0.dtd">
 <jboss>
 
+<!-- 	<enterprise-beans> -->
+<!-- 		<session> -->
+<!-- 			<ejb-name>SampleFacadeBean</ejb-name> -->
+<!-- 			<depends>jboss.j2ee:ear=jee5-exemplo1-app.ear,jar=jee5-exemplo1-ejb2-1.0.0-SNAPSHOT.jar,name=XyzBean,service=EJB3_endpoint</depends> -->
+<!-- 		</session> -->
+<!-- 	</enterprise-beans> -->
+	
 </jboss>
 
