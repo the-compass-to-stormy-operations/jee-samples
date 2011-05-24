@@ -18,6 +18,8 @@ public class JBPMSample {
 
 		StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
 		ProcessInstance processInstance = ksession.startProcess("com.sample.bpmn.hello");
+		
+		System.out.println(processInstance.getId());
 	}
 
 }

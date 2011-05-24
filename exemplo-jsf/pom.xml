@@ -186,6 +186,13 @@
       <artifactId>exemplo-tag</artifactId>
       <version>1.0.0-SNAPSHOT</version>
     </dependency>
+    		<dependency>
+			<groupId>tirando.onda.jee</groupId>
+			<artifactId>jee5-utility</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+    
 	</dependencies>
 
 </project>
