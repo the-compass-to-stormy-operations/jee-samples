@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<ui:composition template="/public/templates/default.xhtml">
+	<ui:define name="body">
+		<h:form id="frmProcessManager">
+			<rich:panel>
+				<h:dataTable id="tabProcessDefinition" value="#{processManager.processDefinition}" var="item" border="1">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="ID"/>
+						</f:facet>
+						<h:outputText value="#{item.id}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Key"/>
+						</f:facet>
+						<h:outputText value="#{item.key}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Nome"/>
+						</f:facet>
+						<h:outputText value="#{item.name}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Categoria"/>
+						</f:facet>
+						<h:outputText value="#{item.category}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Versão"/>
+						</f:facet>
+						<h:outputText value="#{item.version}"/>
+					</h:column>
+					<h:column>
+						<a4j:commandButton id="btShowInstance" value="Exibir Instâncias" reRender="tabProcessInstance,tabTask,messages">
+							<f:setPropertyActionListener target="#{processManager.selectedProcessDefinition}" value="#{item}"/>
+						</a4j:commandButton>
+					</h:column>
+					<h:column>
+						<a4j:commandButton id="btStartProcess" value="Iniciar Processo" action="#{processManager.startProcess}" reRender="messages">
+							<f:setPropertyActionListener target="#{processManager.selectedProcessDefinition}" value="#{item}"/>
+						</a4j:commandButton>
+					</h:column>
+				</h:dataTable>
+				<h:dataTable id="tabProcessInstance" value="#{processManager.processInstance}" var="item" border="1">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="ID"/>
+						</f:facet>
+						<h:outputText value="#{item.processDefinitionId}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Key"/>
+						</f:facet>
+						<h:outputText value="#{item.businessKey}"/>
+					</h:column>
+				</h:dataTable>
+				<h:dataTable id="tabTask" value="#{processManager.task}" var="item" border="1">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="ID"/>
+						</f:facet>
+						<h:outputText value="#{item.id}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Nome"/>
+						</f:facet>
+						<h:outputText value="#{item.name}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Descrição"/>
+						</f:facet>
+						<h:outputText value="#{item.description}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Prioridade"/>
+						</f:facet>
+						<h:outputText value="#{item.priority}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Proprietário"/>
+						</f:facet>
+						<h:outputText value="#{item.owner}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Atribuido"/>
+						</f:facet>
+						<h:outputText value="#{item.assignee}"/>
+					</h:column>
+				</h:dataTable>
+			</rich:panel>
+		</h:form>
+
+		<a4j:status  onstart="Richfaces.showModalPanel('pnModal')" onstop="Richfaces.hideModalPanel('pnModal')"/>
+
+		<rich:modalPanel id="pnModal" autosized="true">
+			<f:facet name="header">
+				<h:outputText value="Wait..." />
+			</f:facet>
+			<rich:progressBar id="progressBar" mode="client" value="99" />
+		</rich:modalPanel>
+	</ui:define>
+</ui:composition>
+</html>

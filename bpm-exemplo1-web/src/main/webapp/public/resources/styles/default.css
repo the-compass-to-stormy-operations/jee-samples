@@ -1,0 +1,29 @@
+body {   
+    background-color:   #ffffff;
+    margin:             0px;    
+    font-family:        verdana,helvetica,arial,sans-serif;
+    font-size:          12px;
+    font-weight:        normal; 
+}
+
+samp {
+	margin-left: 		30px;
+}
+
+#error-top {
+	background-color:   #d40000;
+	color:				#ffffff;
+	height:				40px;
+	vertical-align: 	top;
+	position: 			absolute;
+	width: 				100%;
+}
+
+#error-bottom {
+	background-color:   #d40000;
+	color:				#ffffff;
+	height:				40px;
+	vertical-align: 	bottom;
+	position: 			absolute;
+	width: 				100%;
+}
