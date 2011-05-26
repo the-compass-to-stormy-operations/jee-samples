@@ -6,22 +6,18 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
 import org.activiti.engine.ProcessEngine;
-import org.activiti.engine.ProcessEngineConfiguration;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
+
+import br.gov.serpro.bpm.context.ActivitiContext;
+import br.gov.serpro.bpm.context.BPMContext;
 
 public class ProcessManagerBean {
 	
 	public ProcessDefinition selectedProcessDefinition;
 	                         
-	private static ProcessEngine engine = ProcessEngineConfiguration
-		.createStandaloneProcessEngineConfiguration()
-		.setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE)
-		.setJdbcDriver("org.h2.Driver")
-		.setJdbcUrl("jdbc:h2:tcp://localhost/~/Java/activiti-5.5/apps/h2/activiti")
-		.setJdbcUsername("sa").setJdbcPassword("")
-		.setJobExecutorActivate(false).buildProcessEngine();
+	private BPMContext<ProcessEngine> ctx = new ActivitiContext();
 	
 	public ProcessDefinition getSelectedProcessDefinition() {
 		return selectedProcessDefinition;
@@ -32,7 +28,7 @@ public class ProcessManagerBean {
 	}
 
 	public DataModel getProcessDefinition() {
-		List<ProcessDefinition> list = engine.getRepositoryService().createProcessDefinitionQuery()
+		List<ProcessDefinition> list = ctx.getEngine().getRepositoryService().createProcessDefinitionQuery()
 			.list();
 		
 		return new ListDataModel(list);
@@ -43,7 +39,7 @@ public class ProcessManagerBean {
 			return new ListDataModel();
 		}
 		
-		List<ProcessInstance> list = engine.getRuntimeService().createProcessInstanceQuery()
+		List<ProcessInstance> list = ctx.getEngine().getRuntimeService().createProcessInstanceQuery()
 			.processDefinitionId(selectedProcessDefinition.getId())
 			.list();
 		
@@ -55,7 +51,7 @@ public class ProcessManagerBean {
 			return new ListDataModel();
 		}
 
-		List<Task> list = engine.getTaskService().createTaskQuery()
+		List<Task> list = ctx.getEngine().getTaskService().createTaskQuery()
 			.processDefinitionId(selectedProcessDefinition.getId())
 			.list();
 		
@@ -63,7 +59,9 @@ public class ProcessManagerBean {
 	}
 	
 	public String startProcess() {
-		engine.getRuntimeService().startProcessInstanceById(selectedProcessDefinition.getId());
+		ctx.getEngine().getRuntimeService()
+			.startProcessInstanceById(selectedProcessDefinition.getId());
+		
 		return "process-manager";
 	}
 
