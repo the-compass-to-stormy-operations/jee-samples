@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<ui:composition template="/public/templates/default.xhtml">
+	<ui:define name="body">
+		<h:form id="frmSample1">
+			<rich:panel>
+				<rich:dataTable id="tabSample1" value="#{sample1.sampleEntity1List}" var="item">
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="ID"/>
+						</f:facet>
+						<h:outputText value="#{item.id}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Text Field"/>
+						</f:facet>
+						<h:outputText value="#{item.textField}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Choice Field"/>
+						</f:facet>
+						<h:outputText value="#{item.choiceField}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Date Field"/>
+						</f:facet>
+						<h:outputText value="#{item.dateField}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Decimal Field"/>
+						</f:facet>
+						<h:outputText value="#{item.decimalField}"/>
+					</rich:column>
+				</rich:dataTable>
+				<h:commandButton id="btNew" value="Novo" action="#{sample1.create}" />
+			</rich:panel>
+		</h:form>
+
+		<a4j:status onstart="Richfaces.showModalPanel('pnModal')" onstop="Richfaces.hideModalPanel('pnModal')"/>
+
+		<rich:modalPanel id="pnModal" autosized="true">
+			<f:facet name="header">
+				<h:outputText value="Wait..." />
+			</f:facet>
+			<rich:progressBar id="progressBar" mode="client" value="99" />
+		</rich:modalPanel>
+	</ui:define>
+</ui:composition>
+</html>

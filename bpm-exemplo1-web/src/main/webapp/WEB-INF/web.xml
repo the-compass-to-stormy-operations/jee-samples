@@ -55,6 +55,9 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.jsf</url-pattern>
 	</servlet-mapping>
+	<listener>
+		<listener-class>tirando.onda.jee.bpm.exemplo1.web.servlet.listener.JTAServletRequestListener</listener-class>
+	</listener>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>index.html</welcome-file>

@@ -10,25 +10,25 @@
 		<h:form id="frmSample">
 			<rich:panel>
 				<h:outputLabel for="textField" value="Text Field:"/>
-				<h:inputText id="textField" value="#{sample.textField}" /><br />
+				<h:inputText id="textField" value="#{sample1.sampleEntity1.textField}" /><br />
 				
 				<h:outputLabel for="dateField" value="Date Field:"/>
-				<rich:calendar id="dateField" value="#{sample.dateField}" datePattern="dd/MM/yyyy" enableManualInput="true" firstWeekDay="0">
+				<rich:calendar id="dateField" value="#{sample1.sampleEntity1.dateField}" datePattern="dd/MM/yyyy" enableManualInput="true" firstWeekDay="0">
 					<f:convertDateTime pattern="dd/MM/yyyy" />
 				</rich:calendar><br />
 	
 				<h:outputLabel for="choiceField" value="Choice Field:"/>
-				<h:selectOneMenu id="choiceField" value="#{sample.choiceField}">
-					<f:selectItems value="#{sample.choiceFieldValues}" />
+				<h:selectOneMenu id="choiceField" value="#{sample1.sampleEntity1.choiceField}">
+					<f:selectItems value="#{sample1.choiceFieldValues}" />
 				</h:selectOneMenu><br />
 	
 				<h:outputLabel for="decimalField" value="Decimal Field:"/>
-				<h:inputText id="decimalField" value="#{sample.decimalField}">
+				<h:inputText id="decimalField" value="#{sample1.sampleEntity1.decimalField}">
 					<f:converter converterId="javax.faces.BigDecimal" />
 				</h:inputText><br />
 				
-				<a4j:commandButton id="btExecute1" value="Execute 1" action="#{sample.execute1}" reRender="messages"/>
-				<a4j:commandButton id="btExecute2" value="Execute 2" action="#{sample.execute2}" reRender="messages"/>
+				<a4j:commandButton id="btSave" value="Gravar" action="#{sample1.save}" reRender="messages"/>
+				<a4j:commandButton id="btCancel" value="Cancelar" action="#{sample1.cancel}" reRender="messages"/>
 			</rich:panel>
 		</h:form>
 

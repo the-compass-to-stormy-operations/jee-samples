@@ -5,14 +5,17 @@ import org.activiti.engine.ProcessEngineConfiguration;
 
 public class ActivitiContext implements BPMContext<ProcessEngine> {
 	
-	private static ProcessEngine engine = ProcessEngineConfiguration
-		.createStandaloneProcessEngineConfiguration()
-		.setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE)
-		.setJdbcDriver("org.postgresql.Driver")
-		.setJdbcUrl("jdbc:postgresql://framework.cta.serpro/bpm-exemplo1-db")
-		.setJdbcUsername("bpm")
-		.setJdbcPassword("bpm")
-		.setJobExecutorActivate(false).buildProcessEngine();
+	private static ProcessEngine engine;
+	
+	static {
+		ProcessEngineConfiguration cfg = ProcessEngineConfiguration.createStandaloneProcessEngineConfiguration();
+		cfg.setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE);
+		cfg.setDataSourceJndiName("java:BPMExemplo1DS");
+		cfg.setTransactionsExternallyManaged(true);
+		engine = cfg.buildProcessEngine();
+		
+		//TODO implementar carregamento via JPA
+	}
 
 	public ProcessEngine getEngine() {
 		return engine;

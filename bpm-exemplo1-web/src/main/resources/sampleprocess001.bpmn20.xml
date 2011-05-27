@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+	targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/20100501/BPMN20.xsd">
+
+	<process id="SampleProcess001" name="Sample Process 1">
+		<documentation>Sample Process 1</documentation>
+		<startEvent id="start"/>
+		<endEvent id="end"/>
+		<userTask id="task001" name="Task 1">
+			<documentation>Task 1</documentation>
+			<potentialOwner>
+				<resourceAssignmentExpression>
+					<formalExpression>admin</formalExpression>
+				</resourceAssignmentExpression>
+			</potentialOwner>
+		</userTask>
+		<userTask id="task002" name="Task 2">
+			<documentation>Task 2</documentation>
+			<potentialOwner>
+				<resourceAssignmentExpression>
+					<formalExpression>manager</formalExpression>
+				</resourceAssignmentExpression>
+			</potentialOwner>
+		</userTask>
+		<sequenceFlow sourceRef="start" targetRef="task001"/>
+		<sequenceFlow sourceRef="task001" targetRef="task002"/>
+		<sequenceFlow sourceRef="task002" targetRef="end"/>
+	</process>
+
+</definitions>

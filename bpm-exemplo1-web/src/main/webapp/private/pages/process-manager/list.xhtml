@@ -9,100 +9,100 @@
 	<ui:define name="body">
 		<h:form id="frmProcessManager">
 			<rich:panel>
-				<h:dataTable id="tabProcessDefinition" value="#{processManager.processDefinition}" var="item" border="1">
-					<h:column>
+				<rich:dataTable id="tabProcessDefinition" value="#{processManager.processDefinition}" var="item">
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="ID"/>
 						</f:facet>
 						<h:outputText value="#{item.id}"/>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Key"/>
 						</f:facet>
 						<h:outputText value="#{item.key}"/>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Nome"/>
 						</f:facet>
 						<h:outputText value="#{item.name}"/>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Categoria"/>
 						</f:facet>
 						<h:outputText value="#{item.category}"/>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Versão"/>
 						</f:facet>
 						<h:outputText value="#{item.version}"/>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<a4j:commandButton id="btShowInstance" value="Exibir Instâncias" reRender="tabProcessInstance,tabTask,messages">
 							<f:setPropertyActionListener target="#{processManager.selectedProcessDefinition}" value="#{item}"/>
 						</a4j:commandButton>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<a4j:commandButton id="btStartProcess" value="Iniciar Processo" action="#{processManager.startProcess}" reRender="messages">
 							<f:setPropertyActionListener target="#{processManager.selectedProcessDefinition}" value="#{item}"/>
 						</a4j:commandButton>
-					</h:column>
-				</h:dataTable>
-				<h:dataTable id="tabProcessInstance" value="#{processManager.processInstance}" var="item" border="1">
-					<h:column>
+					</rich:column>
+				</rich:dataTable>
+				<rich:dataTable id="tabProcessInstance" value="#{processManager.processInstance}" var="item">
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="ID"/>
 						</f:facet>
 						<h:outputText value="#{item.processDefinitionId}"/>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Key"/>
 						</f:facet>
 						<h:outputText value="#{item.businessKey}"/>
-					</h:column>
-				</h:dataTable>
-				<h:dataTable id="tabTask" value="#{processManager.task}" var="item" border="1">
-					<h:column>
+					</rich:column>
+				</rich:dataTable>
+				<rich:dataTable id="tabTask" value="#{processManager.task}" var="item">
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="ID"/>
 						</f:facet>
 						<h:outputText value="#{item.id}"/>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Nome"/>
 						</f:facet>
 						<h:outputText value="#{item.name}"/>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Descrição"/>
 						</f:facet>
 						<h:outputText value="#{item.description}"/>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Prioridade"/>
 						</f:facet>
 						<h:outputText value="#{item.priority}"/>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Proprietário"/>
 						</f:facet>
 						<h:outputText value="#{item.owner}"/>
-					</h:column>
-					<h:column>
+					</rich:column>
+					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Atribuido"/>
 						</f:facet>
 						<h:outputText value="#{item.assignee}"/>
-					</h:column>
-				</h:dataTable>
+					</rich:column>
+				</rich:dataTable>
 			</rich:panel>
 		</h:form>
 

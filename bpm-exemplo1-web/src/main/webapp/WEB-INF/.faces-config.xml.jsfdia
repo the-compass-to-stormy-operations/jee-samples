@@ -5,20 +5,24 @@
    <PROCESS-ITEM-OUTPUT ID="default::#private#pages#default.xhtml"
     NAME="output" PATH="/private/pages/default.xhtml"
     TARGET="rules:#private#pages#default.xhtml" TITLE="default" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="sample::#private#pages#sample.xhtml"
-    NAME="output1" PATH="/private/pages/sample.xhtml"
-    TARGET="rules:#private#pages#sample.xhtml" TITLE="sample" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT
-    ID="process-manager::#private#pages#process-manager.xhtml"
-    NAME="output2" PATH="/private/pages/process-manager.xhtml"
-    TARGET="rules:#private#pages#process-manager.xhtml"
-    TITLE="process-manager" model-entity="JSFProcessItemOutput"/>
+    ID="sample1-list::#private#pages#sample1#list.xhtml" NAME="output1"
+    PATH="/private/pages/sample1/list.xhtml"
+    TARGET="rules:#private#pages#sample1#list.xhtml"
+    TITLE="sample1-list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="sample1-edit::#private#pages#sample1#edit.xhtml" NAME="output2"
+    PATH="/private/pages/sample1/edit.xhtml"
+    TARGET="rules:#private#pages#sample1#edit.xhtml"
+    TITLE="sample1-edit" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#private#pages#sample.xhtml"
-  PATH="/private/pages/sample.xhtml" SHAPE="256,177,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#private#pages#default.xhtml"
   PATH="/private/pages/default.xhtml" SHAPE="256,33,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#private#pages#process-manager.xhtml"
-  PATH="/private/pages/process-manager.xhtml" SHAPE="272,321,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#private#pages#process-manager#list.xhtml"
+  PATH="/private/pages/process-manager/list.xhtml" SHAPE="272,321,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#private#pages#sample1#list.xhtml"
+  PATH="/private/pages/sample1/list.xhtml" SHAPE="272,209,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#private#pages#sample1#edit.xhtml"
+  PATH="/private/pages/sample1/edit.xhtml" SHAPE="272,433,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

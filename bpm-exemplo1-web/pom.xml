@@ -175,6 +175,24 @@
 			<artifactId>richfaces-ui</artifactId>
 			<version>3.3.3.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>8.4-702.jdbc4</version>
+			<scope>provided</scope>
+		</dependency>	
+		<!-- Adicionado por Elizier, pode retirar -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>br.gov.serpro.bpm</groupId> -->
+<!-- 			<artifactId>bpm-client</artifactId> -->
+<!-- 			<version>1.0.0-SNAPSHOT</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>br.gov.serpro.bpm</groupId> -->
+<!-- 			<artifactId>activiti-bpm-client</artifactId> -->
+<!-- 			<version>1.0.0-SNAPSHOT</version> -->
+<!-- 		</dependency> -->
+
 	</dependencies>
 	
 </project>

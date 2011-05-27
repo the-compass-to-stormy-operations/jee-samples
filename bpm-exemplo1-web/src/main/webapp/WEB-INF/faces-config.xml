@@ -13,8 +13,8 @@
 	</application>
 
 	<managed-bean>
-		<managed-bean-name>sample</managed-bean-name>
-		<managed-bean-class>tirando.onda.jee.bpm.exemplo1.web.faces.managedbean.SampleBean</managed-bean-class>
+		<managed-bean-name>sample1</managed-bean-name>
+		<managed-bean-class>tirando.onda.jee.bpm.exemplo1.web.faces.managedbean.SampleBean1</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	
@@ -51,13 +51,18 @@
 			<redirect/>
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>sample</from-outcome>
-			<to-view-id>/private/pages/sample.xhtml</to-view-id>
+			<from-outcome>sample1-list</from-outcome>
+			<to-view-id>/private/pages/sample1/list.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>sample1-edit</from-outcome>
+			<to-view-id>/private/pages/sample1/edit.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>process-manager</from-outcome>
-			<to-view-id>/private/pages/process-manager.xhtml</to-view-id>
+			<to-view-id>/private/pages/process-manager/list.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
 	</navigation-rule>
