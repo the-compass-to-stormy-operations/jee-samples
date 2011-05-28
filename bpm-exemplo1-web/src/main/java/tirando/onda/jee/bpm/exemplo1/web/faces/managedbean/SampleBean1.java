@@ -9,6 +9,10 @@ import javax.faces.model.SelectItem;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.activiti.engine.ProcessEngine;
+
+import br.gov.serpro.bpm.context.ActivitiContext;
+
 import tirando.onda.jee.bpm.exemplo1.web.entity.SampleEntity1;
 
 public class SampleBean1 {
@@ -61,6 +65,10 @@ public class SampleBean1 {
 	
 	public String save() {
 		em.persist(sampleEntity1);
+		
+		ProcessEngine engine = new ActivitiContext().getEngine();
+		engine.getRuntimeService().startProcessInstanceByKey("SampleProcess001","SampleEntity1_"+sampleEntity1.getId());
+		
 		return "sample1-list";
 	}
 

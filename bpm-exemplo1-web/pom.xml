@@ -35,7 +35,7 @@
 	</repositories>
 
 	<build>
-		<finalName>bpm-exemplo1</finalName>
+		<finalName>${project.artifactId}</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>

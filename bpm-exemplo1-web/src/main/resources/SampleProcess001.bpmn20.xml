@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/20100501/BPMN20.xsd"
+	targetNamespace="SampleProcess">
+
+	<process id="SampleProcess001" name="Sample Process 1">
+		<documentation>Sample Process 1</documentation>
+
+		<startEvent id="start"/>
+		<endEvent id="end"/>
+
+		<userTask id="task001" name="Task 1">
+			<documentation>Task 1</documentation>
+			<potentialOwner>
+				<resourceAssignmentExpression>
+					<formalExpression>user</formalExpression>
+				</resourceAssignmentExpression>
+			</potentialOwner>
+		</userTask>
+		<userTask id="task002" name="Task 2">
+			<documentation>Task 2</documentation>
+			<potentialOwner>
+				<resourceAssignmentExpression>
+					<formalExpression>manager</formalExpression>
+				</resourceAssignmentExpression>
+			</potentialOwner>
+		</userTask>
+		<userTask id="task003" name="Task 3">
+			<documentation>Task 3</documentation>
+			<potentialOwner>
+				<resourceAssignmentExpression>
+					<formalExpression>user</formalExpression>
+				</resourceAssignmentExpression>
+			</potentialOwner>
+		</userTask>
+		
+		<parallelGateway id="parallelGateway001" name="Parallel Gateway 1"/>
+		<parallelGateway id="parallelGateway002" name="Parallel Gateway 2"/>
+		
+		<sequenceFlow sourceRef="start" targetRef="task001"/>
+		<sequenceFlow sourceRef="task001" targetRef="parallelGateway001"/>
+		<sequenceFlow sourceRef="parallelGateway001" targetRef="task002"/>
+		<sequenceFlow sourceRef="parallelGateway001" targetRef="task003"/>
+		<sequenceFlow sourceRef="task002" targetRef="parallelGateway002"/>
+		<sequenceFlow sourceRef="task003" targetRef="parallelGateway002"/>
+		<sequenceFlow sourceRef="parallelGateway002" targetRef="end"/>
+	</process>
+
+</definitions>

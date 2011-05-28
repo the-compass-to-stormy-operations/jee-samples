@@ -1,12 +1,22 @@
-import br.gov.serpro.bpm.context.ActivitiContext;
-
+import org.activiti.engine.ProcessEngine;
+import org.activiti.engine.ProcessEngineConfiguration;
 
 public class Deploy {
 
 	public static void main(String[] args) {
-		ActivitiContext ctx = new ActivitiContext();
-		ctx.getEngine().getRepositoryService().createDeployment().addClasspathResource("sampleprocess001.bpmn20.xml").deploy();
+		ProcessEngine engine = ProcessEngineConfiguration.createStandaloneProcessEngineConfiguration()
+			.setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE)
+			.setJdbcDriver("org.postgresql.Driver")
+			.setJdbcUrl("jdbc:postgresql://framework.cta.serpro/bpm-exemplo1-db")
+			.setJdbcUsername("bpm")
+			.setJdbcPassword("bpm")
+			.setJobExecutorActivate(false)
+			.buildProcessEngine();
 		
+		engine.getRepositoryService().createDeployment()
+			.name("SampleProcessDeployment")
+			.addClasspathResource("SampleProcess001.bpmn20.xml")
+			.deploy();
 	}
 
 }

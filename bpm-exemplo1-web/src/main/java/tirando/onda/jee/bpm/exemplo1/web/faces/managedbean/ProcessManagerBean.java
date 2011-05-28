@@ -2,6 +2,7 @@ package tirando.onda.jee.bpm.exemplo1.web.faces.managedbean;
 
 import java.util.List;
 
+import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
@@ -16,7 +17,11 @@ import br.gov.serpro.bpm.context.BPMContext;
 
 public class ProcessManagerBean {
 	
+	private FacesContext facesContext = FacesContext.getCurrentInstance();
+	
 	public ProcessDefinition selectedProcessDefinition;
+	public Task selectedTask;
+	public String selectedTaskId;
 	                         
 	private BPMContext<ProcessEngine> ctx = new ActivitiContext();
 	
@@ -63,6 +68,15 @@ public class ProcessManagerBean {
 		ctx.getEngine().getRuntimeService()
 			.startProcessInstanceById(selectedProcessDefinition.getId());
 		
+		return "process-manager";
+	}
+	
+	public String claimTask() {
+		System.out.println(facesContext.getExternalContext().getUserPrincipal().getName());
+		System.out.println(selectedTask);
+		System.out.println(selectedTaskId);
+//		ctx.getEngine().getTaskService().claim(selectedTask.getId(), facesContext.getExternalContext().getUserPrincipal().getName());
+//		
 		return "process-manager";
 	}
 	
