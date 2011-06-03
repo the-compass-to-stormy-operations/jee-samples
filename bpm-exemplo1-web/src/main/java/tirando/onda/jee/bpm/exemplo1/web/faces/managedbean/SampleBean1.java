@@ -11,9 +11,8 @@ import javax.persistence.PersistenceContext;
 
 import org.activiti.engine.ProcessEngine;
 
-import br.gov.serpro.bpm.context.ActivitiContext;
-
 import tirando.onda.jee.bpm.exemplo1.web.entity.SampleEntity1;
+import br.gov.serpro.bpm.context.ActivitiContext;
 
 public class SampleBean1 {
 	

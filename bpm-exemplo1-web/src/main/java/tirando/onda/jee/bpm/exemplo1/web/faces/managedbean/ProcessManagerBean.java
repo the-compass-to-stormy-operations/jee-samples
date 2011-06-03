@@ -19,9 +19,9 @@ public class ProcessManagerBean {
 	
 	private FacesContext facesContext = FacesContext.getCurrentInstance();
 	
-	public ProcessDefinition selectedProcessDefinition;
-	public Task selectedTask;
-	public String selectedTaskId;
+	private ProcessDefinition selectedProcessDefinition;
+	private ProcessInstance selectedProcessInstance;
+	private Task selectedTask;
 	                         
 	private BPMContext<ProcessEngine> ctx = new ActivitiContext();
 	
@@ -31,6 +31,22 @@ public class ProcessManagerBean {
 
 	public void setSelectedProcessDefinition(ProcessDefinition selectedProcessDefinition) {
 		this.selectedProcessDefinition = selectedProcessDefinition;
+	}
+
+	public ProcessInstance getSelectedProcessInstance() {
+		return selectedProcessInstance;
+	}
+
+	public void setSelectedProcessInstance(ProcessInstance selectedProcessInstance) {
+		this.selectedProcessInstance = selectedProcessInstance;
+	}
+
+	public Task getSelectedTask() {
+		return selectedTask;
+	}
+
+	public void setSelectedTask(Task selectedTask) {
+		this.selectedTask = selectedTask;
 	}
 
 	public DataModel getProcessDefinition() {
@@ -53,31 +69,28 @@ public class ProcessManagerBean {
 	}
 	
 	public DataModel getTask() {
-		if (selectedProcessDefinition == null) {
+		if (selectedProcessInstance == null) {
 			return new ListDataModel();
 		}
 
 		List<Task> list = ctx.getEngine().getTaskService().createTaskQuery()
-			.processDefinitionId(selectedProcessDefinition.getId())
+			.processInstanceId(selectedProcessInstance.getId())
 			.list();
 		
 		return new ListDataModel(list);
 	}
 	
-	public String startProcess() {
-		ctx.getEngine().getRuntimeService()
-			.startProcessInstanceById(selectedProcessDefinition.getId());
-		
-		return "process-manager";
+	public void startProcess() {
+		ctx.getEngine().getRuntimeService().startProcessInstanceById(selectedProcessDefinition.getId());
 	}
 	
-	public String claimTask() {
-		System.out.println(facesContext.getExternalContext().getUserPrincipal().getName());
-		System.out.println(selectedTask);
-		System.out.println(selectedTaskId);
-//		ctx.getEngine().getTaskService().claim(selectedTask.getId(), facesContext.getExternalContext().getUserPrincipal().getName());
-//		
-		return "process-manager";
+	public void claimTask() {
+		ctx.getEngine().getTaskService().claim(selectedTask.getId(), "admin" /*facesContext.getExternalContext().getUserPrincipal().getName()*/);
+		
+	}
+	
+	public void completeTask() {
+		ctx.getEngine().getTaskService().complete(selectedTask.getId());
 	}
 	
 }

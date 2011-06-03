@@ -7,67 +7,70 @@
 	xmlns:a4j="http://richfaces.org/a4j">
 <ui:composition template="/public/templates/default.xhtml">
 	<ui:define name="body">
-		<h:form id="frmProcessManager">
-			<rich:panel>
-				<rich:dataTable id="tabProcessDefinition" value="#{processManager.processDefinition}" var="item">
+		<a4j:form id="frmProcessManager">
+			<rich:panel id="pnProcessManager">
+				<rich:dataTable id="tabProcessDefinition" value="#{processManager.processDefinition}" var="pd">
 					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="ID"/>
 						</f:facet>
-						<h:outputText value="#{item.id}"/>
+						<h:outputText value="#{pd.id}"/>
 					</rich:column>
 					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Key"/>
 						</f:facet>
-						<h:outputText value="#{item.key}"/>
+						<h:outputText value="#{pd.key}"/>
 					</rich:column>
 					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Nome"/>
 						</f:facet>
-						<h:outputText value="#{item.name}"/>
+						<h:outputText value="#{pd.name}"/>
 					</rich:column>
 					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Categoria"/>
 						</f:facet>
-						<h:outputText value="#{item.category}"/>
+						<h:outputText value="#{pd.category}"/>
 					</rich:column>
 					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Versão"/>
 						</f:facet>
-						<h:outputText value="#{item.version}"/>
+						<h:outputText value="#{pd.version}"/>
 					</rich:column>
 					<rich:column>
-						<a4j:commandButton id="btShowInstance" value="Exibir Instâncias" reRender="tabProcessInstance,tabTask,messages">
-							<f:setPropertyActionListener target="#{processManager.selectedProcessDefinition}" value="#{item}"/>
+						<a4j:commandButton id="btShowInstance" value="Exibir Instâncias" reRender="tabProcessInstance,messages">
+							<f:setPropertyActionListener target="#{processManager.selectedProcessDefinition}" value="#{pd}"/>
+							<f:setPropertyActionListener target="#{processManager.selectedProcessInstance}" value="#{null}"/>
+							<f:setPropertyActionListener target="#{processManager.selectedTask}" value="#{null}"/>
 						</a4j:commandButton>
 					</rich:column>
 					<rich:column>
 						<a4j:commandButton id="btStartProcess" value="Iniciar Processo" action="#{processManager.startProcess}" reRender="messages">
-							<f:setPropertyActionListener target="#{processManager.selectedProcessDefinition}" value="#{item}"/>
-						</a4j:commandButton>
-					</rich:column>
-					<rich:column>
-						<a4j:commandButton id="btClaimTask" value="Reclamar Tarefa" action="#{processManager.claimTask}">
-							<f:setPropertyActionListener target="#{processManager.selectedTaskId}" value="#{item.id}"/>
+							<f:setPropertyActionListener target="#{processManager.selectedProcessDefinition}" value="#{pd}"/>
 						</a4j:commandButton>
 					</rich:column>
 				</rich:dataTable>
-				<rich:dataTable id="tabProcessInstance" value="#{processManager.processInstance}" var="item">
+				<rich:dataTable id="tabProcessInstance" value="#{processManager.processInstance}" var="pi">
 					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="ID"/>
 						</f:facet>
-						<h:outputText value="#{item.processDefinitionId}"/>
+						<h:outputText value="#{pi.processDefinitionId}"/>
 					</rich:column>
 					<rich:column>
 						<f:facet name="header">
 							<h:outputText value="Key"/>
 						</f:facet>
-						<h:outputText value="#{item.businessKey}"/>
+						<h:outputText value="#{pi.businessKey}"/>
+					</rich:column>
+					<rich:column>
+						<a4j:commandButton id="btShowTask" value="Exibir Tarefas" reRender="tabTask,message">
+							<f:setPropertyActionListener target="#{processManager.selectedProcessInstance}" value="#{pi}"/>
+							<f:setPropertyActionListener target="#{processManager.selectedTask}" value="#{null}"/>
+						</a4j:commandButton>
 					</rich:column>
 				</rich:dataTable>
 				<rich:dataTable id="tabTask" value="#{processManager.task}" var="task">
@@ -108,13 +111,18 @@
 						<h:outputText value="#{task.assignee}"/>
 					</rich:column>
 					<rich:column>
-						<a4j:commandButton id="btClaimTask" value="Reclamar Tarefa" action="#{processManager.claimTask}">
+						<a4j:commandButton id="btClaimTask" value="Reclamar Tarefa" action="#{processManager.claimTask}" reRender="tabTask,messages">
+							<f:setPropertyActionListener target="#{processManager.selectedTask}" value="#{task}"/>
+						</a4j:commandButton>
+					</rich:column>
+					<rich:column>
+						<a4j:commandButton id="btCompleteTask" value="Completar Tarefa" action="#{processManager.completeTask}" reRender="tabTask,messages">
 							<f:setPropertyActionListener target="#{processManager.selectedTask}" value="#{task}"/>
 						</a4j:commandButton>
 					</rich:column>
 				</rich:dataTable>
 			</rich:panel>
-		</h:form>
+		</a4j:form>	
 
 		<a4j:status  onstart="Richfaces.showModalPanel('pnModal')" onstop="Richfaces.hideModalPanel('pnModal')"/>
 

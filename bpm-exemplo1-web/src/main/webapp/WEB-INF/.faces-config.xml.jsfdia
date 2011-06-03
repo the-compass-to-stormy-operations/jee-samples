@@ -15,6 +15,11 @@
     PATH="/private/pages/sample1/edit.xhtml"
     TARGET="rules:#private#pages#sample1#edit.xhtml"
     TITLE="sample1-edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="process-manager::#private#pages#process-manager#list.xhtml"
+    NAME="output3" PATH="/private/pages/process-manager/list.xhtml"
+    TARGET="rules:#private#pages#process-manager#list.xhtml"
+    TITLE="process-manager" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#private#pages#default.xhtml"
