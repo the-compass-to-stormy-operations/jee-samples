@@ -20,5 +20,5 @@ public class ActivitiContext implements BPMContext<ProcessEngine> {
 	public ProcessEngine getEngine() {
 		return engine;
 	}
-
+	
 }

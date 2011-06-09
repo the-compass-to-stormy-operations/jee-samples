@@ -20,6 +20,11 @@
     NAME="output3" PATH="/private/pages/process-manager/list.xhtml"
     TARGET="rules:#private#pages#process-manager#list.xhtml"
     TITLE="process-manager" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="process-manager-jbpm::#private#pages#process-manager-jbpm#list.xhtml"
+    NAME="output4" PATH="/private/pages/process-manager-jbpm/list.xhtml"
+    TARGET="rules:#private#pages#process-manager-jbpm#list.xhtml"
+    TITLE="process-manager-jbpm" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#private#pages#default.xhtml"
@@ -30,4 +35,8 @@
   PATH="/private/pages/sample1/list.xhtml" SHAPE="272,209,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#private#pages#sample1#edit.xhtml"
   PATH="/private/pages/sample1/edit.xhtml" SHAPE="272,433,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#private#pages#process-manager-jbpm#list.xhtml"
+  PATH="/private/pages/process-manager-jbpm/list.xhtml"
+  SHAPE="304,609,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

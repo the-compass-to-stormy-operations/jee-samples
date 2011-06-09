@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<ui:composition template="/public/templates/default.xhtml">
+	<ui:define name="body">
+		<a4j:form id="frmProcessManager">
+			<rich:panel id="pnProcessManager">
+				<rich:dataTable id="tabProcessDefinition" value="#{processManagerJBPM.processDefinition}" var="pd">
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="ID"/>
+						</f:facet>
+						<h:outputText value="#{pd.id}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Nome"/>
+						</f:facet>
+						<h:outputText value="#{pd.name}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Versão"/>
+						</f:facet>
+						<h:outputText value="#{pd.version}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Pacote"/>
+						</f:facet>
+						<h:outputText value="#{pd.packageName}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Tipo"/>
+						</f:facet>
+						<h:outputText value="#{pd.type}"/>
+					</rich:column>
+					<rich:column>
+						<a4j:commandButton id="btShowInstance" value="Exibir Instâncias" reRender="pnProcessManager,messages">
+							<f:setPropertyActionListener target="#{processManagerJBPM.selectedProcessDefinition}" value="#{pd}"/>
+						</a4j:commandButton>
+					</rich:column>
+					<rich:column>
+						<a4j:commandButton id="btStartProcess" value="Iniciar Processo" action="#{processManagerJBPM.startProcess}" reRender="messages">
+							<f:setPropertyActionListener target="#{processManagerJBPM.selectedProcessDefinition}" value="#{pd}"/>
+						</a4j:commandButton>
+					</rich:column>
+				</rich:dataTable>
+				<rich:dataTable id="tabProcessInstance" value="#{processManagerJBPM.processInstance}" var="pi">
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Process ID"/>
+						</f:facet>
+						<h:outputText value="#{pi.processId}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Id"/>
+						</f:facet>
+						<h:outputText value="#{pi.id}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Process Name"/>
+						</f:facet>
+						<h:outputText value="#{pi.processName}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="State"/>
+						</f:facet>
+						<h:outputText value="#{pi.state}"/>
+					</rich:column>
+					<rich:column>
+						<a4j:commandButton id="btShowTask" value="Exibir Tarefas" reRender="pnProcessManager,messages">
+							<f:setPropertyActionListener target="#{processManagerJBPM.selectedProcessInstance}" value="#{pi}"/>
+						</a4j:commandButton>
+					</rich:column>
+				</rich:dataTable>
+				<rich:dataTable id="tabTask" value="#{processManagerJBPM.task}" var="task">
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="ID"/>
+						</f:facet>
+						<h:outputText value="#{task.id}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Name"/>
+						</f:facet>
+						<h:outputText value="#{task.name}"/>
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="State"/>
+						</f:facet>
+						<h:outputText value="#{task.state}"/>
+					</rich:column>
+					<rich:column>
+						<a4j:commandButton id="btCompleteTask" value="Completar Tarefa" action="#{processManagerJBPM.completeTask}" reRender="pnProcessManager,messages">
+							<f:setPropertyActionListener target="#{processManagerJBPM.selectedTask}" value="#{task}"/>
+						</a4j:commandButton>
+					</rich:column>
+				</rich:dataTable>
+			</rich:panel>			
+		</a4j:form>	
+
+		<a4j:status  onstart="Richfaces.showModalPanel('pnModal')" onstop="Richfaces.hideModalPanel('pnModal')"/>
+
+		<rich:modalPanel id="pnModal" autosized="true">
+			<f:facet name="header">
+				<h:outputText value="Wait..." />
+			</f:facet>
+			<rich:progressBar id="progressBar" mode="client" value="99" />
+		</rich:modalPanel>
+	</ui:define>
+</ui:composition>
+</html>

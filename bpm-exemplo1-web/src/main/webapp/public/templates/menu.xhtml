@@ -17,6 +17,9 @@
 			<rich:toolBarGroup>
 				<h:commandLink value="Process" title="Process" action="process-manager" />
 			</rich:toolBarGroup>
+			<rich:toolBarGroup>
+				<h:commandLink value="Process JBPM" title="Process JBPM" action="process-manager-jbpm" />
+			</rich:toolBarGroup>
 			<rich:toolBarGroup location="right">
 				<h:selectOneMenu id="skin" value="#{skinManager.skin}" onchange="submit();">
 					<f:selectItems value="#{skinManager.skinSelectItens}" />

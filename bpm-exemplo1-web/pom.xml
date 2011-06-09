@@ -23,10 +23,10 @@
 			<layout>default</layout>
 		</repository>
 		<repository>
-			<id>repository.jboss.com</id>
+			<id>repository.jboss.org</id>
 			<name>Jboss Repository for Maven</name>
-			<url>http://repository.jboss.com/maven2/</url>
-		</repository>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+		</repository>		
 		<repository>
 			<id>maven.alfresco.com</id>
 			<name>Maven Alfresco Repository</name>
@@ -155,6 +155,38 @@
 			<artifactId>activiti-engine</artifactId>
 			<version>5.5</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-bpmn2</artifactId>
+			<version>5.0.0</version>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.jbpm</groupId> -->
+<!-- 			<artifactId>jbpm-bam</artifactId> -->
+<!-- 			<version>5.0.0</version> -->
+<!-- 			<exclusions> -->
+<!-- 				<exclusion> -->
+<!-- 					<groupId>org.hibernate</groupId> -->
+<!-- 					<artifactId>hibernate-entitymanager</artifactId> -->
+<!-- 				</exclusion> -->
+<!-- 			</exclusions> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.jbpm</groupId> -->
+<!-- 			<artifactId>jbpm-persistence-jpa</artifactId> -->
+<!-- 			<version>5.0.0</version> -->
+<!-- 			<exclusions> -->
+<!-- 				<exclusion> -->
+<!-- 					<groupId>org.hibernate</groupId> -->
+<!-- 					<artifactId>hibernate-entitymanager</artifactId> -->
+<!-- 				</exclusion> -->
+<!-- 			</exclusions> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.jbpm</groupId> -->
+<!-- 			<artifactId>jbpm-human-task</artifactId> -->
+<!-- 			<version>5.0.0</version> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>com.sun.facelets</groupId>
 			<artifactId>jsf-facelets</artifactId>

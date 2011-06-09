@@ -1,6 +1,8 @@
 package tirando.onda.jee.bpm.exemplo1.web.faces.managedbean;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
@@ -16,8 +18,6 @@ import br.gov.serpro.bpm.context.BPMContext;
 
 
 public class ProcessManagerBean {
-	
-	private FacesContext facesContext = FacesContext.getCurrentInstance();
 	
 	private ProcessDefinition selectedProcessDefinition;
 	private ProcessInstance selectedProcessInstance;
@@ -85,12 +85,15 @@ public class ProcessManagerBean {
 	}
 	
 	public void claimTask() {
-		ctx.getEngine().getTaskService().claim(selectedTask.getId(), "admin" /*facesContext.getExternalContext().getUserPrincipal().getName()*/);
+		ctx.getEngine().getTaskService().claim(selectedTask.getId(), FacesContext.getCurrentInstance().getExternalContext().getUserPrincipal().getName());
 		
 	}
 	
 	public void completeTask() {
-		ctx.getEngine().getTaskService().complete(selectedTask.getId());
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("condition1", false);
+		
+		ctx.getEngine().getTaskService().complete(selectedTask.getId(), data);
 	}
 	
 }

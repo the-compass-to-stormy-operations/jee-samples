@@ -2,6 +2,8 @@ package tirando.onda.jee.bpm.exemplo1.web.faces.managedbean;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
@@ -66,7 +68,11 @@ public class SampleBean1 {
 		em.persist(sampleEntity1);
 		
 		ProcessEngine engine = new ActivitiContext().getEngine();
-		engine.getRuntimeService().startProcessInstanceByKey("SampleProcess001","SampleEntity1_"+sampleEntity1.getId());
+		
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("sampleEntity1", sampleEntity1);
+		
+		engine.getRuntimeService().startProcessInstanceByKey("SampleProcess001","SampleEntity1_"+sampleEntity1.getId(),data);
 		
 		return "sample1-list";
 	}
