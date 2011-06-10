@@ -171,22 +171,45 @@
 <!-- 				</exclusion> -->
 <!-- 			</exclusions> -->
 <!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.jbpm</groupId> -->
-<!-- 			<artifactId>jbpm-persistence-jpa</artifactId> -->
-<!-- 			<version>5.0.0</version> -->
-<!-- 			<exclusions> -->
-<!-- 				<exclusion> -->
-<!-- 					<groupId>org.hibernate</groupId> -->
-<!-- 					<artifactId>hibernate-entitymanager</artifactId> -->
-<!-- 				</exclusion> -->
-<!-- 			</exclusions> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.jbpm</groupId> -->
-<!-- 			<artifactId>jbpm-human-task</artifactId> -->
-<!-- 			<version>5.0.0</version> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-persistence-jpa</artifactId>
+			<version>5.0.0</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>hibernate-entitymanager</artifactId>
+					<groupId>org.hibernate</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>hibernate-annotations</artifactId>
+					<groupId>org.hibernate</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>hibernate-commons-annotations</artifactId>
+					<groupId>org.hibernate</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>hibernate-core</artifactId>
+					<groupId>org.hibernate</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>persistence-api</artifactId>
+					<groupId>javax.persistence</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>javassist</artifactId>
+					<groupId>javassist</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jta</artifactId>
+					<groupId>javax.transaction</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>dom4j</artifactId>
+					<groupId>dom4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>com.sun.facelets</groupId>
 			<artifactId>jsf-facelets</artifactId>
@@ -225,6 +248,11 @@
 <!-- 			<version>1.0.0-SNAPSHOT</version> -->
 <!-- 		</dependency> -->
 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<version>1.6.1</version>
+			<artifactId>slf4j-jdk14</artifactId>
+		</dependency>
 	</dependencies>
 	
 </project>

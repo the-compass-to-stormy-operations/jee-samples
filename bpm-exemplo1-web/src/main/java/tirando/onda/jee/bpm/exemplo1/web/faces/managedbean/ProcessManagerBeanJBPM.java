@@ -4,10 +4,23 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
+import javax.transaction.UserTransaction;
 
+import org.drools.KnowledgeBase;
+import org.drools.KnowledgeBaseFactory;
+import org.drools.builder.KnowledgeBuilder;
+import org.drools.builder.KnowledgeBuilderFactory;
+import org.drools.builder.ResourceType;
 import org.drools.definition.process.Process;
+import org.drools.io.ResourceFactory;
+import org.drools.persistence.jpa.JPAKnowledgeService;
+import org.drools.runtime.Environment;
+import org.drools.runtime.EnvironmentName;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.drools.runtime.process.ProcessInstance;
 import org.drools.runtime.process.WorkItem;
@@ -17,6 +30,12 @@ import br.gov.serpro.bpm.context.JBPMContext;
 
 
 public class ProcessManagerBeanJBPM {
+	
+	@PersistenceUnit(unitName="JBPMPU")
+	private EntityManagerFactory emf;
+	
+	@Resource
+	private UserTransaction ut;
 	
 	private BPMContext<StatefulKnowledgeSession> ctx = new JBPMContext();
 	
@@ -34,7 +53,17 @@ public class ProcessManagerBeanJBPM {
 	}
 	
 	public void startProcess() {
-		this.ctx.getEngine().startProcess(this.selectedProcessDefinition.getId());
+		KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
+		kbuilder.add(ResourceFactory.newClassPathResource("SampleProcess001.bpmn20.xml"), ResourceType.BPMN2);
+		KnowledgeBase kbase = kbuilder.newKnowledgeBase();
+		
+		Environment env = KnowledgeBaseFactory.newEnvironment();
+		env.set(EnvironmentName.ENTITY_MANAGER_FACTORY, emf);
+		StatefulKnowledgeSession ksession = JPAKnowledgeService.newStatefulKnowledgeSession(kbase, null, env);
+
+		
+		ksession.startProcess(this.selectedProcessDefinition.getId());
+		ksession.dispose();
 	}
 	
 	public DataModel getProcessInstance() {

@@ -18,7 +18,7 @@ import br.gov.serpro.bpm.context.ActivitiContext;
 
 public class SampleBean1 {
 	
-	@PersistenceContext
+	@PersistenceContext(unitName="BPMExemplo1PU")
 	private EntityManager em;
 	private Long sampleEntity1Id;
 	private SampleEntity1 sampleEntity1;

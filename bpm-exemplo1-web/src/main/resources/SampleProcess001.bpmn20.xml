@@ -40,9 +40,6 @@
 		<parallelGateway id="parallelGateway001" name="Parallel Gateway 1" gatewayDirection="Diverging"/>
 		<parallelGateway id="parallelGateway002" name="Parallel Gateway 2" gatewayDirection="Converging"/>
 		
-<!-- 		<exclusiveGateway id="exclusiveGateway001" name="Exclusive Gateway 1"/> -->
-		
-		
 		<sequenceFlow sourceRef="start" targetRef="task001"/>
 		<sequenceFlow sourceRef="task001" targetRef="parallelGateway001"/>
 		<sequenceFlow sourceRef="parallelGateway001" targetRef="task002"/>
