@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
-import javax.transaction.UserTransaction;
 
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
@@ -26,7 +24,7 @@ import org.drools.runtime.process.ProcessInstance;
 import org.drools.runtime.process.WorkItem;
 
 import br.gov.serpro.bpm.context.BPMContext;
-import br.gov.serpro.bpm.context.JBPMContext;
+import br.gov.serpro.bpm.context.JBPMContextImpl;
 
 
 public class ProcessManagerBeanJBPM {
@@ -34,16 +32,23 @@ public class ProcessManagerBeanJBPM {
 	@PersistenceUnit(unitName="JBPMPU")
 	private EntityManagerFactory emf;
 	
-	@Resource
-	private UserTransaction ut;
-	
-	private BPMContext<StatefulKnowledgeSession> ctx = new JBPMContext();
+	private BPMContext<StatefulKnowledgeSession> ctx;
 	
 	private Process selectedProcessDefinition;
 
 	private ProcessInstance selectedProcessInstance;
 	
 	private WorkItem selectedTask;
+	
+	public ProcessManagerBeanJBPM() {
+		this.getEngine();
+	}
+	
+	private BPMContext<StatefulKnowledgeSession> getEngine() {
+		if (this.ctx == null)
+			this.ctx = JBPMContextImpl.getInstance(this.emf);
+		return this.ctx;
+	}
 	
 	public DataModel getProcessDefinition() {
 		Collection<Process> processess = ctx.getEngine().getKnowledgeBase().getProcesses();
@@ -60,7 +65,6 @@ public class ProcessManagerBeanJBPM {
 		Environment env = KnowledgeBaseFactory.newEnvironment();
 		env.set(EnvironmentName.ENTITY_MANAGER_FACTORY, emf);
 		StatefulKnowledgeSession ksession = JPAKnowledgeService.newStatefulKnowledgeSession(kbase, null, env);
-
 		
 		ksession.startProcess(this.selectedProcessDefinition.getId());
 		ksession.dispose();
@@ -81,7 +85,7 @@ public class ProcessManagerBeanJBPM {
 			return new ListDataModel();
 		}
 
-		return new ListDataModel(JBPMContext.workItem);
+		return new ListDataModel(JBPMContextImpl.workItem);
 	}
 	
 	public void completeTask() {

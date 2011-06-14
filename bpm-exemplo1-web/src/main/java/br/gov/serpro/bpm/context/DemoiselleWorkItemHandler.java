@@ -7,7 +7,7 @@ import org.drools.runtime.process.WorkItemManager;
 public class DemoiselleWorkItemHandler implements WorkItemHandler {
 
 	public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
-		JBPMContext.workItem.add(workItem);
+		JBPMContextImpl.workItem.add(workItem);
 		
 		System.out.println("Executando item ...");
 

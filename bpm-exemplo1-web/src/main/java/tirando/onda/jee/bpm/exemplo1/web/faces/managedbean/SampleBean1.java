@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
 import org.activiti.engine.ProcessEngine;
 
 import tirando.onda.jee.bpm.exemplo1.web.entity.SampleEntity1;
-import br.gov.serpro.bpm.context.ActivitiContext;
+import br.gov.serpro.bpm.context.ActivitiContextImpl;
 
 public class SampleBean1 {
 	
@@ -67,7 +67,7 @@ public class SampleBean1 {
 	public String save() {
 		em.persist(sampleEntity1);
 		
-		ProcessEngine engine = new ActivitiContext().getEngine();
+		ProcessEngine engine = new ActivitiContextImpl().getEngine();
 		
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("sampleEntity1", sampleEntity1);

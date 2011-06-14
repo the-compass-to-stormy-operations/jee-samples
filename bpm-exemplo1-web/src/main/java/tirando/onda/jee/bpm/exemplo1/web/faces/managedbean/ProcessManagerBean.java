@@ -13,7 +13,7 @@ import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 
-import br.gov.serpro.bpm.context.ActivitiContext;
+import br.gov.serpro.bpm.context.ActivitiContextImpl;
 import br.gov.serpro.bpm.context.BPMContext;
 
 
@@ -23,7 +23,7 @@ public class ProcessManagerBean {
 	private ProcessInstance selectedProcessInstance;
 	private Task selectedTask;
 	                         
-	private BPMContext<ProcessEngine> ctx = new ActivitiContext();
+	private BPMContext<ProcessEngine> ctx = new ActivitiContextImpl();
 	
 	public ProcessDefinition getSelectedProcessDefinition() {
 		return selectedProcessDefinition;
