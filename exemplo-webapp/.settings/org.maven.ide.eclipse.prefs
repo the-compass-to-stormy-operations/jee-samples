@@ -1,9 +1,0 @@
-#Wed Mar 02 09:17:33 BRT 2011
-activeProfiles=jboss5
-eclipse.preferences.version=1
-fullBuildGoals=process-test-resources
-includeModules=false
-resolveWorkspaceProjects=false
-resourceFilterGoals=process-resources resources\:testResources
-skipCompilerPlugin=true
-version=1
