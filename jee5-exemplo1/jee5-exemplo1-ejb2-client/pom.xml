@@ -9,9 +9,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	
-	<groupId>tirando.onda.jee</groupId>
 	<artifactId>jee5-exemplo1-ejb2-client</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
 	
 	<name>JEE 5 Exemplo 1 - EJB2 Client</name>
 	<description>JEE 5 Exemplo 1 - EJB2 Client</description>
