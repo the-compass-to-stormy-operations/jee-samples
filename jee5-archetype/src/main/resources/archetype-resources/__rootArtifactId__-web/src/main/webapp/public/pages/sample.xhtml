@@ -1,0 +1,48 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<ui:composition template="/public/templates/default.xhtml">
+	<ui:define name="body">
+		<h:form id="frmSample">
+			<rich:panel>
+				<h:outputLabel for="textField" value="Text Field:"/>
+				<h:inputText id="textField" value="${symbol_pound}{sample.textField}" /><br />
+				
+				<h:outputLabel for="dateField" value="Date Field:"/>
+				<rich:calendar id="dateField" value="${symbol_pound}{sample.dateField}" datePattern="dd/MM/yyyy" enableManualInput="true" firstWeekDay="0">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</rich:calendar><br />
+	
+				<h:outputLabel for="choiceField" value="Choice Field:"/>
+				<h:selectOneMenu id="choiceField" value="${symbol_pound}{sample.choiceField}">
+					<f:selectItems value="${symbol_pound}{sample.choiceFieldValues}" />
+				</h:selectOneMenu><br />
+	
+				<h:outputLabel for="decimalField" value="Decimal Field:"/>
+				<h:inputText id="decimalField" value="${symbol_pound}{sample.decimalField}">
+					<f:converter converterId="javax.faces.BigDecimal" />
+				</h:inputText><br />
+				
+				<a4j:commandButton id="btExecute1" value="Execute 1" action="${symbol_pound}{sample.execute1}" reRender="messages"/>
+				<a4j:commandButton id="btExecute2" value="Execute 2" action="${symbol_pound}{sample.execute2}" reRender="messages"/>
+			</rich:panel>
+		</h:form>
+
+		<a4j:status  onstart="Richfaces.showModalPanel('pnModal')" onstop="Richfaces.hideModalPanel('pnModal')"/>
+
+		<rich:modalPanel id="pnModal" autosized="true">
+			<f:facet name="header">
+				<h:outputText value="Wait..." />
+			</f:facet>
+			<rich:progressBar id="progressBar" mode="client" value="99" />
+		</rich:modalPanel>
+	</ui:define>
+</ui:composition>
+</html>

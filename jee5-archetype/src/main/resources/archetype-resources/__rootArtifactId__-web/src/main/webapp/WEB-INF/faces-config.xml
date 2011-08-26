@@ -1,0 +1,57 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">	
+
+	<application>
+		<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+		<locale-config>
+			<default-locale>pt-BR</default-locale>
+		</locale-config>
+	</application>
+
+	<managed-bean>
+		<managed-bean-name>sample</managed-bean-name>
+		<managed-bean-class>${package}.jee5.exemplo1.web.faces.managedbean.SampleBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>skinManager</managed-bean-name>
+		<managed-bean-class>${package}.jee5.exemplo1.web.faces.managedbean.SkinManagerBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>skin</property-name>
+			<value>DEFAULT</value>
+		</managed-property>
+		<managed-property>
+			<property-name>skinItens</property-name>
+			<list-entries>
+				<value>DEFAULT</value>
+				<value>blueSky</value>
+				<value>ruby</value>
+				<value>wine</value>
+				<value>classic</value>
+			</list-entries>
+		</managed-property>
+	</managed-bean>
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>default</from-outcome>
+			<to-view-id>/private/pages/default.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>sample</from-outcome>
+			<to-view-id>/public/pages/sample.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+</faces-config>

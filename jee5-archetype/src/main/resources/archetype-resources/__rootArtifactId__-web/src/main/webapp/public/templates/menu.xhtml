@@ -1,0 +1,28 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<ui:composition>
+	<h:form id="frmMenu">
+		<rich:toolBar height="34" itemSeparator="line">
+			<rich:toolBarGroup>
+				<h:commandLink value="Default" title="Default" action="default" />
+			</rich:toolBarGroup>
+			<rich:toolBarGroup>
+				<h:commandLink value="Sample" title="Sample" action="sample" />
+			</rich:toolBarGroup>
+			<rich:toolBarGroup location="right">
+				<h:selectOneMenu id="skin" value="${symbol_pound}{skinManager.skin}" onchange="submit();">
+					<f:selectItems value="${symbol_pound}{skinManager.skinSelectItens}" />
+				</h:selectOneMenu>
+			</rich:toolBarGroup>
+		</rich:toolBar>
+	</h:form>
+</ui:composition>
+</html>

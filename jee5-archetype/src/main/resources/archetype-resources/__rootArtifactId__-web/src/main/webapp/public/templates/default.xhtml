@@ -1,0 +1,26 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="${symbol_pound}{facesContext.externalContext.requestContextPath}/public/resources/styles/default.css" rel="stylesheet" type="text/css" />
+	<title><ui:insert name="title">Tirando Onda JEE - Exemplo Web</ui:insert></title>
+</head>
+<body>
+<f:view>
+	<ui:include src="/public/templates/menu.xhtml" /> 
+
+	<ui:include src="/public/templates/message.xhtml" /> 
+	
+	<ui:insert name="body">
+	</ui:insert>
+</f:view>
+</body>
+</html>
