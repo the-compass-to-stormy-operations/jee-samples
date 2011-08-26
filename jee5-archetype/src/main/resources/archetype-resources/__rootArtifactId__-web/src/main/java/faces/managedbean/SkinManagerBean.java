@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.jee5.exemplo1.web.faces.managedbean;
+package ${package}.faces.managedbean;
 
 import java.util.ArrayList;
 import java.util.Collection;

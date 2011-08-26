@@ -1,4 +1,4 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.jee5.exemplo1.web.faces.validator;
+package ${package}.faces.validator;
