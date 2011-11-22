@@ -26,6 +26,8 @@
 						<jarModule>
 							<groupId>${groupId}</groupId>
 							<artifactId>${rootArtifactId}-ejb-client</artifactId>
+							<bundleDir>/</bundleDir>
+							<includeInApplicationXml>true</includeInApplicationXm							
 						</jarModule>
 						<ejbModule>
 							<groupId>${groupId}</groupId>
