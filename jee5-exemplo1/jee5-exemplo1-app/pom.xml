@@ -20,7 +20,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
-				<version>2.5</version>
+				<version>2.8</version>
 				<configuration>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<version>5</version>
@@ -51,7 +51,7 @@
 				</configuration>
 				<executions>
 					<execution>
-            			<id>m2wtp-generate-application-xml</id>
+            			<id>generate-application-xml</id>
             			<phase>generate-resources</phase>
             			<goals>
               				<goal>generate-application-xml</goal>
