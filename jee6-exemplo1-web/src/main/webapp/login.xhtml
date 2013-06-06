@@ -9,6 +9,7 @@
 </head>
 <body>
 	<h:form id="frmLogin">
+		<h:messages id="msgArea" />
 		<h:panelGrid id="pnlGrid" columns="1">
 			<h:panelGroup>
 				<h:outputLabel for="inputLogin" value="Username:"/>
@@ -16,7 +17,7 @@
 			</h:panelGroup>
 			<h:panelGroup>
 				<h:outputLabel for="inputPassword" value="Password:"/>
-				<h:inputText id="inputPassword" value="#{login.password}" /><br />
+				<h:inputSecret id="inputPassword" value="#{login.password}" /><br />
 			</h:panelGroup>
 			<h:commandButton id="submit" value="Login" action="#{login.autenticateUsernamePassword}" />
 		</h:panelGrid>

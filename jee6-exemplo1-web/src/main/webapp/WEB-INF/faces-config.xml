@@ -10,11 +10,21 @@
 			<default-locale>pt-BR</default-locale>
 		</locale-config>
 	</application>
+	
+	<managed-bean>
+		<managed-bean-name>login</managed-bean-name>
+		<managed-bean-class>tirando.onda.jee.web.faces.Login</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>sucessPageRedirect</property-name>
+			<value>default</value>
+		</managed-property>
+	</managed-bean>
 
 	<navigation-rule>
 		<navigation-case>
-			<from-outcome>login</from-outcome>
-			<to-view-id>/pages/login.xhtml</to-view-id>
+			<from-outcome>default</from-outcome>
+			<to-view-id>/pages/default.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
 	</navigation-rule>

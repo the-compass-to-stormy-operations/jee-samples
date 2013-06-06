@@ -4,21 +4,19 @@ import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
 import com.google.gson.Gson;
 
-@ManagedBean(name="login")
-@RequestScoped
 public class Login {
 	
 	private String username;
 	private String password;
 	private X509Certificate x509;
+	private String sucessPageRedirect;
 	
 	public Login() {
 		super();
@@ -53,6 +51,14 @@ public class Login {
 		this.x509 = x509;
 	}
 
+	public String getSucessPageRedirect() {
+		return sucessPageRedirect;
+	}
+
+	public void setSucessPageRedirect(String sucessPageRedirect) {
+		this.sucessPageRedirect = sucessPageRedirect;
+	}
+
 	public String autenticateUsernamePassword() {
 		HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
 		
@@ -62,13 +68,21 @@ public class Login {
 		
 		Gson gson = new Gson();
 		String json = gson.toJson(map);
-
-		System.out.println(json);
 		
 		try {
 			request.login("USERNAME-PASSWORD", json);
+			return sucessPageRedirect;
 		} catch (ServletException e) {
-			throw new RuntimeException("Failed login with Username/Password", e);
+			StringBuilder sb = new StringBuilder();
+			if (e.getStackTrace() != null) {
+				for (StackTraceElement element : e.getStackTrace()) {
+					sb.append(element.toString());
+					sb.append("\n");
+				}
+			}
+			
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), sb.toString());
+			FacesContext.getCurrentInstance().addMessage(null, message);
 		}	
 		return "";
 	}
