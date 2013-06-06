@@ -29,4 +29,25 @@
 		<url-pattern>*.jsf</url-pattern>
 	</servlet-mapping>
 	
+	<error-page>
+		<error-code>403</error-code>
+		<location>/403.jsf</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/error.jsf</location>
+	</error-page>
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>private</web-resource-name>
+			<description>private resources</description>
+			<url-pattern>/pages/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>*</role-name>
+		</auth-constraint>
+	</security-constraint>
+
 </web-app>
