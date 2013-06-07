@@ -83,8 +83,8 @@ public class Login {
 			
 			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), sb.toString());
 			FacesContext.getCurrentInstance().addMessage(null, message);
+			return "";
 		}	
-		return "";
 	}
 	
 	public String autenticateClientCertificate() {

@@ -1,5 +1,7 @@
 package tirando.onda.jee.jaas;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Map;
 
 import javax.security.auth.Subject;
@@ -8,7 +10,6 @@ import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.callback.NameCallback;
 import javax.security.auth.callback.PasswordCallback;
 import javax.security.auth.login.LoginException;
-import javax.security.auth.message.AuthException;
 import javax.security.auth.spi.LoginModule;
 
 public class ProviderLoginModule implements LoginModule {
@@ -33,11 +34,11 @@ public class ProviderLoginModule implements LoginModule {
 		Callback[] callbacks = new Callback[] { nc, pc };
 		try {
 			callbackHandler.handle(callbacks);
+			System.out.println(nc.getName());
+			System.out.println(pc.getPassword());
 		} catch (Exception e) {
 			throw new RuntimeException("Error on Callback Handle", e);
 		}
-		
-		System.out.println(nc+"/"+pc);
 		
 		return true;
 	}
@@ -49,6 +50,23 @@ public class ProviderLoginModule implements LoginModule {
 
 	public boolean commit() throws LoginException {
 		System.out.println("Commit");
+
+		SimpleGroup callerPrincipalGroup;
+		SimpleGroup roleGroup;
+
+		Collection<SimpleRole> roles = new ArrayList<SimpleRole>();
+		roles.add(new SimpleRole("ROLE001"));
+
+		callerPrincipalGroup = new SimpleGroup("CallerPrincipal");
+		callerPrincipalGroup.addMember(new SimpleUser("admin"));
+		subject.getPrincipals().add(callerPrincipalGroup);
+
+		roleGroup = new SimpleGroup("Roles");
+		for (SimpleRole role : roles) {
+			roleGroup.addMember(role);
+		}
+		subject.getPrincipals().add(roleGroup);
+		
 		return true;
 	}
 
