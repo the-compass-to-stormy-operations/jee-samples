@@ -44,7 +44,8 @@ public class ProviderLoginModule implements LoginModule {
 	}
 
 	public boolean logout() throws LoginException {
-		System.out.println("Login");
+		System.out.println("Logout");
+		
 		return true;
 	}
 
