@@ -64,8 +64,10 @@ public class Login {
 		
 		try {
 			request.login("USERNAME-PASSWORD", json);
-			request.logout();
-			request.login(arg0, arg1);
+
+// 			Estratégia de enganar o cache do jboss quando usamos nova senha do sqlada			
+//			request.logout();
+//			request.login(arg0, arg1);
 			
 			
 			return sucessPageRedirect;
