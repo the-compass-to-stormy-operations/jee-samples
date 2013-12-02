@@ -1,0 +1,16 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jboss PUBLIC "-//JBoss//DTD JBOSS 5.0//EN" "http://www.jboss.org/j2ee/dtd/jboss_5_0.dtd">
+<jboss>
+
+<!-- 	<enterprise-beans> -->
+<!-- 		<session> -->
+<!-- 			<ejb-name>SampleFacadeBean</ejb-name> -->
+<!-- 			<depends>jboss.j2ee:ear=${parentArtifactId}-app.ear,jar=${parentArtifactId}-ejb2-${version}.jar,name=XyzBean,service=EJB3_endpoint</depends> -->
+<!-- 		</session> -->
+<!-- 	</enterprise-beans> -->
+	
+</jboss>
+
